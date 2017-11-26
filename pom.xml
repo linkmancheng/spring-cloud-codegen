@@ -4,8 +4,8 @@
 
 
     <groupId>com.venus.cloud</groupId>
-    <artifactId>spring-cloud-codege</artifactId>
-    <name>spring-cloud-codege</name>
+    <artifactId>spring-cloud-codegen</artifactId>
+    <name>spring-cloud-codegen</name>
     <version>1.0.0</version>
 
 
@@ -36,7 +36,7 @@
         <dependencies>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>spring-cloud-codege-core</artifactId>
+                <artifactId>spring-cloud-codegen-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

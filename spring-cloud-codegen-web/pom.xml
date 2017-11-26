@@ -43,7 +43,7 @@
 
         <dependency>
             <groupId>com.venus.cloud</groupId>
-            <artifactId>spring-cloud-codege-core</artifactId>
+            <artifactId>spring-cloud-codegen-core</artifactId>
             <version>${spring-cloud-codegen-core.version}</version>
         </dependency>
     </dependencies>
