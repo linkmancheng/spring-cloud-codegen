@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>nepxion</groupId>
-    <artifactId>skeleton</artifactId>
-    <name>Nepxion Skeleton</name>
+
+
+    <groupId>com.venus.cloud</groupId>
+    <artifactId>spring-cloud-codege</artifactId>
+    <name>spring-cloud-codege</name>
+    <version>1.0.0</version>
+
+
     <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
-    <version>1.0.0</version>
+
     <url>https://github.com/Nepxion/</url>
 
     <modules>
-        <module>spring-cloud-codege-core</module>
+        <module>spring-cloud-codegen-core</module>
         <module>spring-cloud-codegen-web</module>
     </modules>
 
@@ -31,15 +36,15 @@
         <dependencies>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>skeleton-generator</artifactId>
+                <artifactId>spring-cloud-codege-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>skeleton-generator-spring-cloud</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>spring-cloud-codegen-web</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
             <dependency>
                 <groupId>org.freemarker</groupId>

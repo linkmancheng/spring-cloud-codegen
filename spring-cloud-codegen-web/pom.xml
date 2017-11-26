@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>nepxion</groupId>
-    <artifactId>skeleton-generator-spring-cloud</artifactId>
-    <name>Nepxion Skeleton Generator Spring Cloud</name>
+
+
+    <groupId>com.venus.cloud</groupId>
+    <artifactId>spring-cloud-codege-web</artifactId>
+    <name>spring-cloud-codege-web</name>
     <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
     <version>1.0.0</version>
-    <url>https://github.com/Nepxion/</url>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -17,9 +18,9 @@
 
     <properties>
         <spring.cloud.version>Dalston.SR4</spring.cloud.version>
-        <generator.version>1.0.0</generator.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud-codegen-core.version>1.0.0</spring-cloud-codegen-core.version>
     </properties>
 
     <dependencyManagement>
@@ -41,9 +42,9 @@
         </dependency>
 
         <dependency>
-            <groupId>nepxion</groupId>
-            <artifactId>skeleton-generator</artifactId>
-            <version>${generator.version}</version>	    
+            <groupId>com.venus.cloud</groupId>
+            <artifactId>spring-cloud-codege-core</artifactId>
+            <version>${spring-cloud-codegen-core.version}</version>
         </dependency>
     </dependencies>
 
