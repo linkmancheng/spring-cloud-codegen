@@ -10,13 +10,13 @@ package com.venus.cloud.codegen.generator;
  * @version 1.0
  */
 
-import com.venus.cloud.codegen.property.SkeletonProperties;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.venus.cloud.codegen.entity.SkeletonFileType;
 import com.venus.cloud.codegen.exception.SkeletonException;
+import com.venus.cloud.codegen.property.SkeletonProperties;
 import com.venus.cloud.codegen.util.SkeletonUtil;
 
 public abstract class SkeletonFileGenerator extends AbstractSkeletonGenerator {

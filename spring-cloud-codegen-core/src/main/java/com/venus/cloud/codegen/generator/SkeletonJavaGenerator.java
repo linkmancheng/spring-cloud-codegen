@@ -13,14 +13,15 @@ package com.venus.cloud.codegen.generator;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.venus.cloud.codegen.constant.SkeletonConstant;
 import com.venus.cloud.codegen.entity.SkeletonFileType;
 import com.venus.cloud.codegen.exception.SkeletonException;
 import com.venus.cloud.codegen.property.SkeletonProperties;
 import com.venus.cloud.codegen.util.SkeletonUtil;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public abstract class SkeletonJavaGenerator extends AbstractSkeletonGenerator {
     private static final Logger LOG = LoggerFactory.getLogger(SkeletonJavaGenerator.class);

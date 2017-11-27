@@ -16,19 +16,23 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import com.venus.cloud.codegen.constant.SkeletonConstant;
-import com.venus.cloud.codegen.property.SkeletonProperties;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.venus.cloud.codegen.constant.SkeletonConstant;
 import com.venus.cloud.codegen.entity.SkeletonEntity;
 import com.venus.cloud.codegen.entity.SkeletonGroup;
 import com.venus.cloud.codegen.exception.SkeletonException;
+import com.venus.cloud.codegen.property.SkeletonProperties;
 
 public class SkeletonConfigTransport {
     private static final Logger LOG = LoggerFactory.getLogger(SkeletonConfigTransport.class);
+
+    private static final String SKELETON_DATA_FILE = "config/skeleton-data.properties";
+    private static final String SKELETON_DESCRIPTION_FILE = "config/skeleton-description.properties";
+    private static final String SKELETON_ITEM_LIST_FILE = "config/skeleton-item-list.properties";
 
     private SkeletonProperties skeletonDataProperties;
     private SkeletonProperties skeletonDescriptionProperties;
@@ -36,13 +40,15 @@ public class SkeletonConfigTransport {
 
     public SkeletonConfigTransport() {
         try {
-            skeletonDataProperties = new SkeletonProperties(SkeletonConstant.SKELETON_DATA_FILE, SkeletonConstant.ENCODING_UTF_8);
-            skeletonDescriptionProperties = new SkeletonProperties(SkeletonConstant.SKELETON_DESCRIPTION_FILE, SkeletonConstant.ENCODING_UTF_8);
-            skeletonItemListProperties = new SkeletonProperties(SkeletonConstant.SKELETON_ITEM_LIST_FILE, SkeletonConstant.ENCODING_UTF_8);
+            skeletonDataProperties = new SkeletonProperties(SKELETON_DATA_FILE, SkeletonConstant.ENCODING_UTF_8);
+            skeletonDescriptionProperties = new SkeletonProperties(SKELETON_DESCRIPTION_FILE, SkeletonConstant.ENCODING_UTF_8);
+            skeletonItemListProperties = new SkeletonProperties(SKELETON_ITEM_LIST_FILE, SkeletonConstant.ENCODING_UTF_8);
         } catch (ConfigurationException e) {
             LOG.error("Parse properties failed", e);
+            e.printStackTrace();
         } catch (IOException e) {
             LOG.error("Parse properties failed", e);
+            e.printStackTrace();
         }
     }
 

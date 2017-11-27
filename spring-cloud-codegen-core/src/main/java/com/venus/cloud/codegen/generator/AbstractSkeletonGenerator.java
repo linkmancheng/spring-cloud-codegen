@@ -15,14 +15,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+import org.apache.commons.io.IOUtils;
+
 import com.venus.cloud.codegen.config.SkeletonConfig;
 import com.venus.cloud.codegen.constant.SkeletonConstant;
 import com.venus.cloud.codegen.context.SkeletonContext;
-import com.venus.cloud.codegen.property.SkeletonProperties;
-import org.apache.commons.io.IOUtils;
-
 import com.venus.cloud.codegen.entity.SkeletonFileType;
 import com.venus.cloud.codegen.exception.SkeletonException;
+import com.venus.cloud.codegen.property.SkeletonProperties;
 
 import freemarker.template.Template;
 import freemarker.template.TemplateException;

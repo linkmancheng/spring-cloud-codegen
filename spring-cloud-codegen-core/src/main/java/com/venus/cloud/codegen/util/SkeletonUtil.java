@@ -10,9 +10,10 @@ package com.venus.cloud.codegen.util;
  * @version 1.0
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.venus.cloud.codegen.constant.SkeletonConstant;
 import com.venus.cloud.codegen.property.SkeletonProperties;
-import org.apache.commons.lang3.StringUtils;
 
 public class SkeletonUtil {
     public static String getOutputPath(String generatePath, SkeletonProperties skeletonProperties) {
