@@ -1,4 +1,4 @@
-# Skeleton Generator
+# Spring Cloud codegen
 [![Apache License 2](https://img.shields.io/badge/license-ASF2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
 基于FreeMarker的框架脚手架生成组件，可以轻松快速实现对框架代码的一键创建（例如业务部门实现对基础架构部提供的框架快速搭建），实现对Spring Cloud的脚手架一键生成
@@ -14,6 +14,7 @@
        2)如下图，将返回一键创建后的zip文件的byte数组格式
        3)Spring Cloud中国社区的spring-cloud-codegen将采用本框架，参考https://github.com/SpringCloud/spring-cloud-codegen	   
 ![Alt text](https://github.com/Nepxion/Skeleton/blob/master/Postman.jpg)
+
 
 ## 使用
 模板文件示例，用${}表示为动态变量
