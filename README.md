@@ -66,9 +66,9 @@ package com.nepxion.skeleton.demo.server.java;
 
 import java.util.Map;
 
-import com.nepxion.skeleton.constant.SkeletonConstant;
-import com.nepxion.skeleton.generator.SkeletonJavaGenerator;
-import com.nepxion.skeleton.property.SkeletonProperties;
+import SkeletonConstant;
+import SkeletonJavaGenerator;
+import SkeletonProperties;
 
 public class MyApplicationClassGenerator extends SkeletonJavaGenerator {
     /**
@@ -188,7 +188,7 @@ package com.nepxion.skeleton.demo;
  * @version 1.0
  */
 
-import com.nepxion.skeleton.property.SkeletonProperties;
+import SkeletonProperties;
 import com.nepxion.skeleton.server.java.MyApplicationClassGenerator;
 import com.nepxion.skeleton.service.resources.MybatisGeneratorXmlGenerator;
 
