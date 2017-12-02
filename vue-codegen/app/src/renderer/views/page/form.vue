@@ -224,34 +224,33 @@
 
 
 
-<!--<script>-->
-<!--//import select2 from '../../components/common/select2/select2.vue';-->
-<!--export default {-->
-    <!--name: 'survey',-->
+<script>
+export default {
+    name: 'survey',
 
-    <!--data() {-->
-        <!--return {-->
-            <!--select2Style: {// select2-style样式-->
-                <!--width: '100%'-->
-            <!--},-->
-            <!--options: {-->
-                <!--proposal: [-->
-                    <!--{ id: '1.8', text: '1.8' },-->
-                    <!--{ id: '1.5', text: '1.5' }-->
-                <!--]-->
-            <!--},-->
-            <!--radioValue: 'middle',-->
-            <!--radioValues: 'a',-->
-            <!--checkboxValue: ['one']-->
-        <!--}-->
-    <!--},-->
-    <!--methods: {-->
-    <!--},-->
-    <!--mounted() {-->
-<!--//        var that = this;-->
-    <!--}-->
-<!--}-->
-<!--</script>-->
+    data() {
+        return {
+            select2Style: {// select2-style样式
+                width: '100%'
+            },
+            options: {
+                proposal: [
+                    { id: '1.8', text: '1.8' },
+                    { id: '1.5', text: '1.5' }
+                ]
+            },
+            radioValue: 'middle',
+            radioValues: 'a',
+            checkboxValue: ['one']
+        }
+    },
+    methods: {
+    },
+    mounted() {
+//        var that = this;
+    }
+}
+</script>
 <style scoped>
     .el-radio{
         color:#666;
