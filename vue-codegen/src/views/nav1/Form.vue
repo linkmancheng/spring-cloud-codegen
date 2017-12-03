@@ -5,12 +5,12 @@
 				<div class="col-sm-12">
 					<div class="ibox float-e-margins">
 						<div class="ibox-title">
-							<h5>请填写需要生成的<span class="text-navy">应用信息</span>，选择需要使用的<span class="text-navy">中间件</span>、<span class="text-navy">基础产品</span></h5>
+							<h5>请填写需要生成的<span class="text-navy">应用信息</span>，选择需要使用的<span class="text-navy">Spring Cloud组件</span>、<span class="text-navy">其它组件</span></h5>
 						</div>
 						<div class="ibox-content">
 							<form method="get" class="form-horizontal">
 								<div class="form-group">
-									<label class="col-sm-2 control-label">Aone应用名</label>
+									<label class="col-sm-2 control-label">应用名</label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control">
 									</div>
@@ -30,7 +30,7 @@
 								<div class="form-group">
 									<label class="col-sm-2 control-label">Java Version</label>
 									<div class="col-sm-10">
-										<el-select v-model="form.region" :select2Style="select2Style" placeholder="请选择活动区域">
+										<el-select v-model="form.region" :select2Style="select2Style" placeholder="请选择jdk版本">
 											<el-option label="1.7" value="1.7"></el-option>
 											<el-option label="1.8" value="1.8"></el-option>
 										</el-select>
@@ -38,12 +38,13 @@
 										<!--<input type="text" class="form-control">-->
 									</div>
 								</div>
+
 								<div class="form-group">
 									<label class="col-sm-2 control-label">应用类型</label>
 									<div class="col-sm-10">
 										<n3-radio-group v-model="radioValue" type="primary" style="margin-top: 7px;">
-											<n3-radio label="left">微服务应用（Pandora Boot）</n3-radio>
-											<n3-radio label="middle">集成Spring Boot<span class="text-navy">（推荐）</span></n3-radio>
+											<n3-radio label="left">Spring Cloud应用</n3-radio>
+											<n3-radio label="middle">Spring Boot应用<span class="text-navy">（推荐）</span></n3-radio>
 											<n3-radio label="right">传统War应用</n3-radio>
 										</n3-radio-group>
 									</div>
@@ -60,7 +61,7 @@
 								</div>
 								<div class="hr-line-dashed"></div>
 								<div class="form-group">
-									<label class="col-sm-2 control-label">Web框架<br><small class="text-navy">请按需勾选</small></label>
+									<label class="col-sm-2 control-label">基础框架<br><small class="text-navy">请按需勾选</small></label>
 									<div class="col-sm-10" style="margin-top: 10px;">
 										<div class="col-sm-4">
 											<n3-checkbox label="one">
@@ -70,68 +71,85 @@
 											</n3-checkbox>
 										</div>
 										<div class="col-sm-4">
-											<n3-checkbox label="two" disabled>
-												<span>webX3</span>
-												<p style="padding: 6px 17px;">集团通用Web框架</p>
-											</n3-checkbox>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">中间件<br><small class="text-navy">请按需勾选</small></label>
-									<div class="col-sm-10" style="margin-top: 10px;">
-										<div class="col-sm-4">
 											<n3-checkbox label="two">
-												<span>HSF</span>
-												<p style="padding: 6px 17px;">阿里高性能服务框架</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>TDDL</span>
-												<p style="padding: 6px 17px;">分库分表数据库服务</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>ONS</span>
-												<p style="padding: 6px 17px;">分布式消息服务</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>HSF</span>
-												<p style="padding: 6px 17px;">阿里高性能服务框架</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>TDDL</span>
-												<p style="padding: 6px 17px;">分库分表数据库服务</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>ONS</span>
-												<p style="padding: 6px 17px;">分布式消息服务</p>
-											</n3-checkbox>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">基础产品<br><small class="text-navy">请按需勾选</small></label>
-									<div class="col-sm-10" style="margin-top: 10px;">
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Spring MVC</span>
+												<span>Mybatis</span>
 												<span class="text-navy style">（推荐）</span>
-												<p style="padding: 6px 17px;">Spring Web框架</p>
+												<p style="padding: 6px 17px;">ORM框架</p>
+											</n3-checkbox>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">Spring Cloud组件<br><small class="text-navy">请按需勾选</small></label>
+									<div class="col-sm-10" style="margin-top: 10px;">
+										<div class="col-sm-4">
+											<n3-checkbox label="two">
+												<span>Eureka</span>
+												<p style="padding: 6px 17px;">注册组件</p>
+											</n3-checkbox>
+										</div>
+										<div class="col-sm-4">
+											<n3-checkbox label="one">
+												<span>Zuul</span>
+												<p style="padding: 6px 17px;">网关</p>
+											</n3-checkbox>
+										</div>
+										<div class="col-sm-4">
+											<n3-checkbox label="two">
+												<span>zookeeper</span>
+												<p style="padding: 6px 17px;">服务注册组件</p>
+											</n3-checkbox>
+										</div>
+										<div class="col-sm-4">
+											<n3-checkbox label="two">
+												<span>Consul</span>
+												<p style="padding: 6px 17px;">服务注册组件</p>
+											</n3-checkbox>
+										</div>
+										<div class="col-sm-4">
+											<n3-checkbox label="one">
+												<span>Feign</span>
+												<p style="padding: 6px 17px;">Feign调用组件</p>
+											</n3-checkbox>
+										</div>
+										<div class="col-sm-4">
+											<n3-checkbox label="two">
+												<span>Ribbon</span>
+												<p style="padding: 6px 17px;">Ribbon负载均衡组件</p>
+											</n3-checkbox>
+										</div>
+
+										<div class="col-sm-4">
+											<n3-checkbox label="two">
+												<span>Ribbon</span>
+												<p style="padding: 6px 17px;">Ribbon负载均衡组件</p>
+											</n3-checkbox>
+										</div>
+
+										<div class="col-sm-4">
+											<n3-checkbox label="two">
+												<span>Spring Cloud Gateway</span>
+												<p style="padding: 6px 17px;">Spring Cloud Gateway网关</p>
+											</n3-checkbox>
+										</div>
+
+
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">Venus产品<br><small class="text-navy">请按需勾选</small></label>
+									<div class="col-sm-10" style="margin-top: 10px;">
+										<div class="col-sm-4">
+											<n3-checkbox label="one">
+												<span>Venus Boot</span>
+												<span class="text-navy style">（推荐）</span>
+												<p style="padding: 6px 17px;">Venus Boot框架</p>
 											</n3-checkbox>
 										</div>
 										<div class="col-sm-4">
 											<n3-checkbox label="two" disabled>
-												<span>webX3</span>
-												<p style="padding: 6px 17px;">集团通用Web框架</p>
+												<span>Venus Cloud</span>
+												<p style="padding: 6px 17px;">Venus Cloud产品</p>
 											</n3-checkbox>
 										</div>
 									</div>
