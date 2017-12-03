@@ -43,9 +43,10 @@
 									<label class="col-sm-2 control-label">应用类型</label>
 									<div class="col-sm-10">
 										<n3-radio-group v-model="radioValue" type="primary" style="margin-top: 7px;">
-											<n3-radio label="left">Spring Cloud应用</n3-radio>
-											<n3-radio label="middle">Spring Boot应用<span class="text-navy">（推荐）</span></n3-radio>
-											<n3-radio label="right">传统War应用</n3-radio>
+											<n3-radio label="left">Spring Boot应用<span class="text-navy">（推荐）</span></n3-radio>
+											</n3-radio>
+											<n3-radio label="middle">Spring Cloud应用<span class="text-navy">（推荐）</span></n3-radio>
+											<n3-radio label="right">Venus Cloud应用</n3-radio>
 										</n3-radio-group>
 									</div>
 								</div>
@@ -61,7 +62,7 @@
 								</div>
 								<div class="hr-line-dashed"></div>
 								<div class="form-group">
-									<label class="col-sm-2 control-label">基础框架<br><small class="text-navy">请按需勾选</small></label>
+									<label class="col-sm-2 control-label">共同基础组件<br><small class="text-navy">请按需勾选</small></label>
 									<div class="col-sm-10" style="margin-top: 10px;">
 										<div class="col-sm-4">
 											<n3-checkbox label="one">
