@@ -45,7 +45,7 @@ hs_err_pid*
 *.gz
 
 # Ant
-build/
+#build/
 
 # Compiled Python
 __pycache__/
