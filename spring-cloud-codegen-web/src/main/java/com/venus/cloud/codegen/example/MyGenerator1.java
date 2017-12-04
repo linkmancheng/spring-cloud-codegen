@@ -1,4 +1,4 @@
-package com.venus.cloud.codegen.demo;
+package com.venus.cloud.codegen.example;
 
 /**
  * <p>Title: Nepxion Skeleton Generator</p>
@@ -10,8 +10,8 @@ package com.venus.cloud.codegen.demo;
  * @version 1.0
  */
 
-import com.venus.cloud.codegen.demo.server.java.MyApplicationClassGenerator;
-import com.venus.cloud.codegen.demo.service.resources.MybatisGeneratorXmlGenerator;
+import com.venus.cloud.codegen.example.server.java.MyApplicationClassGenerator;
+import com.venus.cloud.codegen.example.service.resources.MybatisGeneratorXmlGenerator;
 import com.venus.cloud.codegen.property.SkeletonProperties;
 
 // MyGenerator1和MyGenerator2输出结果一致

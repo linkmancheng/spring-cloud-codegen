@@ -1,4 +1,4 @@
-package com.venus.cloud.codegen.demo.server.java;
+package com.venus.cloud.codegen.example.server.java;
 
 /**
  * <p>Title: Nepxion Skeleton Generator</p>

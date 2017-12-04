@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.venus.cloud.codegen.demo.server.java.MyApplicationClassGenerator;
-import com.venus.cloud.codegen.demo.service.resources.MybatisGeneratorXmlGenerator;
 import com.venus.cloud.codegen.entity.SkeletonGroup;
+import com.venus.cloud.codegen.example.server.java.MyApplicationClassGenerator;
+import com.venus.cloud.codegen.example.service.resources.MybatisGeneratorXmlGenerator;
 import com.venus.cloud.codegen.property.SkeletonProperties;
 import com.venus.cloud.codegen.transport.SkeletonConfigTransport;
 import com.venus.cloud.codegen.transport.SkeletonDataTransport;

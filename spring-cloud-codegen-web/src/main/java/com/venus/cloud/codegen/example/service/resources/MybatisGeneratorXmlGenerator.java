@@ -1,4 +1,4 @@
-package com.venus.cloud.codegen.demo.service.resources;
+package com.venus.cloud.codegen.example.service.resources;
 
 /**
  * <p>Title: Nepxion Skeleton Generator</p>
