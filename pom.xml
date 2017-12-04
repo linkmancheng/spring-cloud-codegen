@@ -11,7 +11,7 @@
 
     <modules>
         <module>spring-cloud-codegen-core</module>
-        <module>spring-cloud-codegen-web</module>
+        <module>spring-cloud-codegen-service</module>
     </modules>
 
     <properties>
@@ -37,7 +37,7 @@
 
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>spring-cloud-codegen-web</artifactId>
+                <artifactId>spring-cloud-codegen-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
