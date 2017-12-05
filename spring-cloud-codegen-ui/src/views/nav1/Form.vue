@@ -172,6 +172,9 @@
 </template>
 
 <script>
+
+  import axios from 'axios'
+
 	export default {
 		name: 'survey',
 //		components: {//select2-定义select2在当前组件中的名称
@@ -203,10 +206,39 @@
 				checkboxValue: ['one'],
 			}
 		},
+    created () {
+      this.fetchData()
+    },
 		methods: {
 
-		},
+      fetchData: async function () {
+        const entity = this.getInit('getMetaData');
+      },
 
+      getInit : function (url) {
+        return axios({
+          method: 'get',
+          baseURL: 'http://localhost:2222/',
+          url,
+          timeout: 10000,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Content-Type': 'application/json; charset=UTF-8',
+            'Accept': 'application/json'
+          }
+        }).then(
+          (response) => {
+            // loading.close()
+            return response
+          }
+        ).then(
+          (res) => {
+            return res
+          }
+        )
+      }
+
+		},
 		mounted: function() {
 			var that = this;
 		}
