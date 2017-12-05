@@ -1,3 +1,8 @@
+/**
+ * Created by liumapp on ${DATE} .
+ * E-mail:liumapp.com@gmail.com
+ * home-page:http://www.liumapp.com
+ */
 import babelpolyfill from 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
@@ -11,6 +16,8 @@ import Vuex from 'vuex'
 //import 'nprogress/nprogress.css'
 import routes from './routes'
 import Mock from './mock'
+import vc from 'vue-cookie'
+
 Mock.bootstrap();
 import 'font-awesome/css/font-awesome.min.css'
 
