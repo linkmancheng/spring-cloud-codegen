@@ -174,6 +174,7 @@
 <script>
 
   import axios from 'axios'
+  import $ from '@/../static/js/jquery'
 
 	export default {
 		name: 'survey',
@@ -212,7 +213,19 @@
 		methods: {
 
       fetchData: async function () {
-        const entity = this.getInit('getMetaData');
+//        const entity = this.getInit('getMetaData');
+        const entity2 = this.getInitJq('getMetaData');
+      },
+
+      getInitJq : function (url) {
+        return $.ajax({
+          type: 'GET',
+          url: 'http://localhost:2222/' + url,
+          dataType: 'json',
+          success: function (data) {
+
+          }
+        });
       },
 
       getInit : function (url) {
