@@ -215,6 +215,7 @@
       fetchData: async function () {
 //        const entity = this.getInit('getMetaData');
         const entity2 = this.getInitJq('getMetaData');
+        const entity3 = this.proxyTest('getMetaData');
       },
 
       getInitJq : function (url) {
@@ -226,8 +227,19 @@
 
           }
         });
-      },
 
+      },
+      proxyTest : function (url) {
+        return $.ajax({
+          type: 'GET',
+          url: '/v1/' + url,
+          dataType: 'json',
+          success: function (data) {
+
+          }
+        });
+
+      },
       getInit : function (url) {
         return axios({
           method: 'get',
