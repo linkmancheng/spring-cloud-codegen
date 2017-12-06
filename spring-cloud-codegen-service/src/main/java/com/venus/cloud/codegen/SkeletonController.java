@@ -32,7 +32,7 @@ import com.venus.cloud.codegen.transport.SkeletonConfigTransport;
 import com.venus.cloud.codegen.transport.SkeletonDataTransport;
 
 @RestController
-@Api(value = "脚手架操作")
+@Api(tags = { "脚手架接口" })
 public class SkeletonController {
     public static final String SPRING_CLOUD_SKELETON = "spring-cloud-skeleton-";
 
