@@ -224,7 +224,7 @@
           url: 'http://localhost:2222/' + url,
           dataType: 'json',
           success: function (data) {
-
+            this.builtDom(data.configGloble);
           }
         });
 
@@ -238,6 +238,9 @@
 
           }
         });
+
+      },
+      builtDom : function (data) {
 
       },
       getInit : function (url) {
