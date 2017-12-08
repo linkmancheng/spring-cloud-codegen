@@ -124,7 +124,6 @@
           tmp.value = data[i].value;
           this.items.push(tmp);
         }
-        console.log(this.items);
       },
       getInit : function (url) {
         return axios({
