@@ -11,7 +11,10 @@
 export default {
 	name: 'app',
 	components: {
-	}
+	},
+  created () {
+	  this.$router.push('codegen');
+  }
 }
 
 </script>
