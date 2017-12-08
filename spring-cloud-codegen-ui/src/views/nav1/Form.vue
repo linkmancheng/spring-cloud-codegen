@@ -8,7 +8,7 @@
 							<h5>请填写需要生成的<span class="text-navy">应用信息</span>，选择需要使用的<span class="text-navy">Spring Cloud组件</span>、<span class="text-navy">其它组件</span></h5>
 						</div>
 						<div class="ibox-content">
-							<form method="get" class="form-horizontal">
+							<form method="post" class="form-horizontal" action="http://localhost:2222/download">
                 <div class="form-group" v-for="(item,index) in items">
                   <label class="col-sm-2 control-label">{{ item.key }}</label>
                   <div class="col-sm-8">
@@ -17,12 +17,13 @@
                     <el-select v-if="item.type == 'COMBOBOX'" v-model="items[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
                       <el-option v-for="option in item.options" :label="option" :value="option"></el-option>
                     </el-select>
+                    <span v-if="item.type != 'COMBOBOX'">{{ item.label }}</span>
                   </div>
                 </div>
 								<div class="hr-line-dashed"></div>
 								<div class="form-group" style="text-align:center;">
 									<div class="col-sm-12">
-										<button class="btn btn-white" type="submit">重置</button>
+										<a class="btn btn-default" type="button" href="#">重置</a>
 										<button class="btn btn-primary" type="submit">生成工程</button>
 									</div>
 								</div>
