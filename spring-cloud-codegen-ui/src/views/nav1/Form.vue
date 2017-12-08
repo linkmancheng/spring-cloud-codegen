@@ -8,157 +8,22 @@
 							<h5>请填写需要生成的<span class="text-navy">应用信息</span>，选择需要使用的<span class="text-navy">Spring Cloud组件</span>、<span class="text-navy">其它组件</span></h5>
 						</div>
 						<div class="ibox-content">
-							<form method="get" class="form-horizontal">
-								<div class="form-group">
-									<label class="col-sm-2 control-label">应用名</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Group</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Artifact</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Java Version</label>
-									<div class="col-sm-10">
-										<el-select v-model="form.region" :select2Style="select2Style" placeholder="请选择jdk版本">
-											<el-option label="1.7" value="1.7"></el-option>
-											<el-option label="1.8" value="1.8"></el-option>
-										</el-select>
-										<!--<select2 :options="options.proposal" :select2Style="select2Style"></select2>-->
-										<!--<input type="text" class="form-control">-->
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="col-sm-2 control-label">应用类型</label>
-									<div class="col-sm-10">
-										<n3-radio-group v-model="radioValue" type="primary" style="margin-top: 7px;">
-											<n3-radio label="left">Spring Boot应用<span class="text-navy">（推荐）</span></n3-radio>
-											</n3-radio>
-											<n3-radio label="middle">Spring Cloud应用<span class="text-navy">（推荐）</span></n3-radio>
-											<n3-radio label="right">Venus Cloud应用</n3-radio>
-										</n3-radio-group>
-									</div>
-								</div>
-								<div class="hr-line-dashed"></div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Docker模板</label>
-									<div class="col-sm-10">
-										<n3-radio-group v-model="radioValues" type="primary" style="margin-top: 7px;">
-											<n3-radio label="a">是</n3-radio>
-											<n3-radio label="b">否</span></n3-radio>
-										</n3-radio-group>
-									</div>
-								</div>
-								<div class="hr-line-dashed"></div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">共同基础组件<br><small class="text-navy">请按需勾选</small></label>
-									<div class="col-sm-10" style="margin-top: 10px;">
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Spring MVC</span>
-												<span class="text-navy style">（推荐）</span>
-												<p style="padding: 6px 17px;">Spring Web框架</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Mybatis</span>
-												<span class="text-navy style">（推荐）</span>
-												<p style="padding: 6px 17px;">ORM框架</p>
-											</n3-checkbox>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Spring Cloud组件<br><small class="text-navy">请按需勾选</small></label>
-									<div class="col-sm-10" style="margin-top: 10px;">
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Eureka</span>
-												<p style="padding: 6px 17px;">注册组件</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Zuul</span>
-												<p style="padding: 6px 17px;">网关</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>zookeeper</span>
-												<p style="padding: 6px 17px;">服务注册组件</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Consul</span>
-												<p style="padding: 6px 17px;">服务注册组件</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Feign</span>
-												<p style="padding: 6px 17px;">Feign调用组件</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Ribbon</span>
-												<p style="padding: 6px 17px;">Ribbon负载均衡组件</p>
-											</n3-checkbox>
-										</div>
-
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Ribbon</span>
-												<p style="padding: 6px 17px;">Ribbon负载均衡组件</p>
-											</n3-checkbox>
-										</div>
-
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Spring Cloud Gateway</span>
-												<p style="padding: 6px 17px;">Spring Cloud Gateway网关</p>
-											</n3-checkbox>
-										</div>
-
-
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Venus产品<br><small class="text-navy">请按需勾选</small></label>
-									<div class="col-sm-10" style="margin-top: 10px;">
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Venus Boot</span>
-												<span class="text-navy style">（推荐）</span>
-												<p style="padding: 6px 17px;">Venus Boot框架</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two" disabled>
-												<span>Venus Cloud</span>
-												<p style="padding: 6px 17px;">Venus Cloud产品</p>
-											</n3-checkbox>
-										</div>
-									</div>
-								</div>
+							<form method="POST" class="form-horizontal" action="http://localhost:2222/download" enctype="text/plain">
+                <div class="form-group" v-for="(item,index) in items">
+                  <label class="col-sm-2 control-label">{{ item.key }}</label>
+                  <div class="col-sm-8">
+                    <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value">
+                    <el-switch v-if="item.type == 'CHECKBOX'" v-model="items[index].value" :name="item.key"></el-switch>
+                    <el-select v-if="item.type == 'COMBOBOX'" v-model="items[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
+                      <el-option v-if="item.type == 'COMBOBOX'" v-for="option in item.options" :label="option" :value="option"></el-option>
+                    </el-select>
+                    <span v-if="item.type != 'COMBOBOX'">{{ item.label }}</span>
+                  </div>
+                </div>
 								<div class="hr-line-dashed"></div>
 								<div class="form-group" style="text-align:center;">
 									<div class="col-sm-12">
-										<button class="btn btn-white" type="submit">重置</button>
+										<a class="btn btn-default" type="button" href="#">重置</a>
 										<button class="btn btn-primary" type="submit">生成工程</button>
 									</div>
 								</div>
@@ -175,9 +40,11 @@
 
   import axios from 'axios'
   import $ from '@/../static/js/jquery'
+  import ElSwitch from "../../../node_modules/element-ui/packages/switch/src/component.vue";
 
 	export default {
-		name: 'survey',
+    components: {ElSwitch},
+    name: 'survey',
 //		components: {//select2-定义select2在当前组件中的名称
 //		},
 
@@ -205,6 +72,7 @@
 				radioValue: 'middle',
 				radioValues: 'a',
 				checkboxValue: ['one'],
+        items: [{}]
 			}
 		},
     created () {
@@ -219,12 +87,13 @@
       },
 
       getInitJq : function (url) {
+        var vue = this;
         return $.ajax({
           type: 'GET',
           url: 'http://localhost:2222/' + url,
           dataType: 'json',
           success: function (data) {
-            this.builtDom(data.configGloble);
+            vue.builtDom(data.configGloble.entityList);
           }
         });
 
@@ -240,8 +109,21 @@
         });
 
       },
-      builtDom : function (data) {
-
+      builtDom: function (data) {
+        var i = 0 ;
+        for (i in data) {
+          var tmp = {};
+          tmp.defaultable = data[i].defaultable;
+          tmp.editable = data[i].editable;
+          tmp.emptiable = data[i].emptiable;
+          tmp.highlightable = data[i].highlightable;
+          tmp.key = data[i].key;
+          tmp.label = data[i].label;
+          tmp.options = data[i].options;
+          tmp.type = data[i].type;
+          tmp.value = data[i].value;
+          this.items.push(tmp);
+        }
       },
       getInit : function (url) {
         return axios({

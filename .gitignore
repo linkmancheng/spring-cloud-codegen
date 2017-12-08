@@ -1,5 +1,6 @@
 # Output Directory
 target/
+tmp/
 
 # C pre-compile
 *.gch
@@ -75,3 +76,5 @@ __pycache__/
 
 # SVN metadata
 .svn/
+
+
