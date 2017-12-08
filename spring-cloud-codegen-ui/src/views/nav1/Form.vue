@@ -9,158 +9,16 @@
 						</div>
 						<div class="ibox-content">
 							<form method="get" class="form-horizontal">
-                <div class="form-group" v-for="item in items">
+                <div class="form-group" v-for="(item,index) in items">
                   <label class="col-sm-2 control-label">{{ item.key }}</label>
                   <div class="col-sm-8">
-                    <input v-if="item.type == ''">
+                    <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value">
+                    <el-switch v-if="item.type == 'CHECKBOX'" v-model="items[index].value" :name="item.key"></el-switch>
+                    <el-select v-if="item.type == 'COMBOBOX'" v-model="items[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
+                      <el-option v-for="option in item.options" :label="option" :value="option"></el-option>
+                    </el-select>
                   </div>
                 </div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">应用名</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Group</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Artifact</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Java Version</label>
-									<div class="col-sm-10">
-										<el-select v-model="form.region" :select2Style="select2Style" placeholder="请选择jdk版本">
-											<el-option label="1.7" value="1.7"></el-option>
-											<el-option label="1.8" value="1.8"></el-option>
-										</el-select>
-										<!--<select2 :options="options.proposal" :select2Style="select2Style"></select2>-->
-										<!--<input type="text" class="form-control">-->
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="col-sm-2 control-label">应用类型</label>
-									<div class="col-sm-10">
-										<n3-radio-group v-model="radioValue" type="primary" style="margin-top: 7px;">
-											<n3-radio label="left">Spring Boot应用<span class="text-navy">（推荐）</span></n3-radio>
-											</n3-radio>
-											<n3-radio label="middle">Spring Cloud应用<span class="text-navy">（推荐）</span></n3-radio>
-											<n3-radio label="right">Venus Cloud应用</n3-radio>
-										</n3-radio-group>
-									</div>
-								</div>
-								<div class="hr-line-dashed"></div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Docker模板</label>
-									<div class="col-sm-10">
-										<n3-radio-group v-model="radioValues" type="primary" style="margin-top: 7px;">
-											<n3-radio label="a">是</n3-radio>
-											<n3-radio label="b">否</span></n3-radio>
-										</n3-radio-group>
-									</div>
-								</div>
-								<div class="hr-line-dashed"></div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">共同基础组件<br><small class="text-navy">请按需勾选</small></label>
-									<div class="col-sm-10" style="margin-top: 10px;">
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Spring MVC</span>
-												<span class="text-navy style">（推荐）</span>
-												<p style="padding: 6px 17px;">Spring Web框架</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Mybatis</span>
-												<span class="text-navy style">（推荐）</span>
-												<p style="padding: 6px 17px;">ORM框架</p>
-											</n3-checkbox>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Spring Cloud组件<br><small class="text-navy">请按需勾选</small></label>
-									<div class="col-sm-10" style="margin-top: 10px;">
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Eureka</span>
-												<p style="padding: 6px 17px;">注册组件</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Zuul</span>
-												<p style="padding: 6px 17px;">网关</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>zookeeper</span>
-												<p style="padding: 6px 17px;">服务注册组件</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Consul</span>
-												<p style="padding: 6px 17px;">服务注册组件</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Feign</span>
-												<p style="padding: 6px 17px;">Feign调用组件</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Ribbon</span>
-												<p style="padding: 6px 17px;">Ribbon负载均衡组件</p>
-											</n3-checkbox>
-										</div>
-
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Ribbon</span>
-												<p style="padding: 6px 17px;">Ribbon负载均衡组件</p>
-											</n3-checkbox>
-										</div>
-
-										<div class="col-sm-4">
-											<n3-checkbox label="two">
-												<span>Spring Cloud Gateway</span>
-												<p style="padding: 6px 17px;">Spring Cloud Gateway网关</p>
-											</n3-checkbox>
-										</div>
-
-
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Venus产品<br><small class="text-navy">请按需勾选</small></label>
-									<div class="col-sm-10" style="margin-top: 10px;">
-										<div class="col-sm-4">
-											<n3-checkbox label="one">
-												<span>Venus Boot</span>
-												<span class="text-navy style">（推荐）</span>
-												<p style="padding: 6px 17px;">Venus Boot框架</p>
-											</n3-checkbox>
-										</div>
-										<div class="col-sm-4">
-											<n3-checkbox label="two" disabled>
-												<span>Venus Cloud</span>
-												<p style="padding: 6px 17px;">Venus Cloud产品</p>
-											</n3-checkbox>
-										</div>
-									</div>
-								</div>
 								<div class="hr-line-dashed"></div>
 								<div class="form-group" style="text-align:center;">
 									<div class="col-sm-12">
@@ -181,9 +39,11 @@
 
   import axios from 'axios'
   import $ from '@/../static/js/jquery'
+  import ElSwitch from "../../../node_modules/element-ui/packages/switch/src/component.vue";
 
 	export default {
-		name: 'survey',
+    components: {ElSwitch},
+    name: 'survey',
 //		components: {//select2-定义select2在当前组件中的名称
 //		},
 
@@ -211,7 +71,7 @@
 				radioValue: 'middle',
 				radioValues: 'a',
 				checkboxValue: ['one'],
-        items: []
+        items: [{}]
 			}
 		},
     created () {
@@ -263,6 +123,7 @@
           tmp.value = data[i].value;
           this.items.push(tmp);
         }
+        console.log(this.items);
       },
       getInit : function (url) {
         return axios({
