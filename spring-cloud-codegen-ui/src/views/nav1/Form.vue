@@ -9,6 +9,12 @@
 						</div>
 						<div class="ibox-content">
 							<form method="get" class="form-horizontal">
+                <div class="form-group" v-for="item in items">
+                  <label class="col-sm-2 control-label">{{ item.key }}</label>
+                  <div class="col-sm-8">
+                    <input v-if="item.type == ''">
+                  </div>
+                </div>
 								<div class="form-group">
 									<label class="col-sm-2 control-label">应用名</label>
 									<div class="col-sm-10">
@@ -205,6 +211,7 @@
 				radioValue: 'middle',
 				radioValues: 'a',
 				checkboxValue: ['one'],
+        items: []
 			}
 		},
     created () {
@@ -219,12 +226,13 @@
       },
 
       getInitJq : function (url) {
+        var vue = this;
         return $.ajax({
           type: 'GET',
           url: 'http://localhost:2222/' + url,
           dataType: 'json',
           success: function (data) {
-            this.builtDom(data.configGloble);
+            vue.builtDom(data.configGloble.entityList);
           }
         });
 
@@ -240,8 +248,21 @@
         });
 
       },
-      builtDom : function (data) {
-
+      builtDom: function (data) {
+        var i = 0 ;
+        for (i in data) {
+          var tmp = {};
+          tmp.defaultable = data[i].defaultable;
+          tmp.editable = data[i].editable;
+          tmp.emptiable = data[i].emptiable;
+          tmp.highlightable = data[i].highlightable;
+          tmp.key = data[i].key;
+          tmp.label = data[i].label;
+          tmp.options = data[i].options;
+          tmp.type = data[i].type;
+          tmp.value = data[i].value;
+          this.items.push(tmp);
+        }
       },
       getInit : function (url) {
         return axios({
