@@ -8,7 +8,7 @@
 							<h5>请填写需要生成的<span class="text-navy">应用信息</span>，选择需要使用的<span class="text-navy">Spring Cloud组件</span>、<span class="text-navy">其它组件</span></h5>
 						</div>
 						<div class="ibox-content">
-							<form method="post" class="form-horizontal" action="http://localhost:2222/download" enctype="application/x-www-form-urlencoded">
+							<form method="POST" class="form-horizontal" action="http://localhost:2222/download" enctype="text/plain">
                 <div class="form-group" v-for="(item,index) in items">
                   <label class="col-sm-2 control-label">{{ item.key }}</label>
                   <div class="col-sm-8">
