@@ -12,6 +12,18 @@ import echarts from './views/charts/echarts.vue'
 
 let routes = [
     {
+      path: '/',
+      component: Home,
+      name: 'Code Generate',
+      iconCls: 'el-icon-message',//图标样式class
+      children: [
+        // { path: '/main', component: Main, name: '主页', hidden: true },
+        // { path: '/form', component: Table, name: 'Table' },
+        { path: '/codegen', component: Form, name: '全局配置' },
+        // { path: '/user', component: user, name: '列表' },
+      ]
+    },
+    {
         path: '/login',
         component: Login,
         name: '',
@@ -24,18 +36,7 @@ let routes = [
         hidden: true
     },
     //{ path: '/main', component: Main },
-    {
-        path: '/',
-        component: Home,
-        name: 'Code Generate',
-        iconCls: 'el-icon-message',//图标样式class
-        children: [
-            // { path: '/main', component: Main, name: '主页', hidden: true },
-            // { path: '/form', component: Table, name: 'Table' },
-            { path: '/codegen', component: Form, name: '全局配置' },
-            // { path: '/user', component: user, name: '列表' },
-        ]
-    },
+
     // {
     //     path: '/',
     //     component: Home,

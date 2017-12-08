@@ -8,14 +8,14 @@
 							<h5>请填写需要生成的<span class="text-navy">应用信息</span>，选择需要使用的<span class="text-navy">Spring Cloud组件</span>、<span class="text-navy">其它组件</span></h5>
 						</div>
 						<div class="ibox-content">
-							<form method="post" class="form-horizontal" action="http://localhost:2222/download">
+							<form method="post" class="form-horizontal" action="http://localhost:2222/download" enctype="application/x-www-form-urlencoded">
                 <div class="form-group" v-for="(item,index) in items">
                   <label class="col-sm-2 control-label">{{ item.key }}</label>
                   <div class="col-sm-8">
                     <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value">
                     <el-switch v-if="item.type == 'CHECKBOX'" v-model="items[index].value" :name="item.key"></el-switch>
                     <el-select v-if="item.type == 'COMBOBOX'" v-model="items[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
-                      <el-option v-for="option in item.options" :label="option" :value="option"></el-option>
+                      <el-option v-if="item.type == 'COMBOBOX'" v-for="option in item.options" :label="option" :value="option"></el-option>
                     </el-select>
                     <span v-if="item.type != 'COMBOBOX'">{{ item.label }}</span>
                   </div>
