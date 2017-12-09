@@ -45,8 +45,6 @@
 	export default {
     components: {ElSwitch},
     name: 'survey',
-//		components: {//select2-定义select2在当前组件中的名称
-//		},
 
 		data: function() {
 			return{
@@ -72,7 +70,10 @@
 				radioValue: 'middle',
 				radioValues: 'a',
 				checkboxValue: ['one'],
-        items: [{}]
+        items: [{}],
+        chkboxItems: [{}],
+        radioItems: [{}],
+        comboItems: [{}]
 			}
 		},
     created () {
@@ -81,9 +82,7 @@
 		methods: {
 
       fetchData: async function () {
-//        const entity = this.getInit('getMetaData');
-        const entity2 = this.getInitJq('getMetaData');
-//        const entity3 = this.proxyTest('getMetaData');
+        this.getInitJq('getMetaData');
       },
 
       getInitJq : function (url) {
@@ -93,21 +92,10 @@
           url: 'http://localhost:2222/' + url,
           dataType: 'json',
           success: function (data) {
-            vue.builtDom(data.configGloble.entityList);
+            console.log(data);
+            vue.builtDom(data[0].entityList);
           }
         });
-
-      },
-      proxyTest : function (url) {
-        return $.ajax({
-          type: 'GET',
-          url: '/v1/' + url,
-          dataType: 'json',
-          success: function (data) {
-
-          }
-        });
-
       },
       builtDom: function (data) {
         var i = 0 ;
@@ -124,33 +112,10 @@
           tmp.value = data[i].value;
           this.items.push(tmp);
         }
-      },
-      getInit : function (url) {
-        return axios({
-          method: 'get',
-          baseURL: 'http://localhost:2222/',
-          url,
-          timeout: 10000,
-          headers: {
-            'X-Requested-With': 'XMLHttpRequest',
-            'Content-Type': 'application/json; charset=UTF-8',
-            'Accept': 'application/json'
-          }
-        }).then(
-          (response) => {
-            // loading.close()
-            return response
-          }
-        ).then(
-          (res) => {
-            return res
-          }
-        )
       }
-
 		},
 		mounted: function() {
-			var that = this;
+
 		}
 	}
 </script>

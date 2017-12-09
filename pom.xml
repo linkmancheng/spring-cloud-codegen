@@ -86,12 +86,6 @@
                 <version>${zip4j.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>io.spring.initializr</groupId>
-                <artifactId>initializr-generator</artifactId>
-                <version>${initializr-generator.version}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
