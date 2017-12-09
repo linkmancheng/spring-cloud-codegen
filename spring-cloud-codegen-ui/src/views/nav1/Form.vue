@@ -20,6 +20,16 @@
                     <span v-if="item.type != 'COMBOBOX'">{{ item.label }}</span>
                   </div>
                 </div>
+
+                <strong data-v-fae5bece="" class="title">{{ chkboxModule.label }}</strong>
+                <h5>{{ chkboxModule.description }}</h5>
+
+                <strong data-v-fae5bece="" class="title">{{ radioModule.label }}</strong>
+                <h5>{{ radioModule.description }}</h5>
+
+                <strong data-v-fae5bece="" class="title">{{ comboModule.label }}</strong>
+                <h5>{{ comboModule.description }}</h5>
+
 								<div class="hr-line-dashed"></div>
 								<div class="form-group" style="text-align:center;">
 									<div class="col-sm-12">
@@ -71,8 +81,26 @@
 				radioValues: 'a',
 				checkboxValue: ['one'],
         items: [{}],
+        chkboxModule: {
+				  label: 'CheckBox配置',
+          description: 'CheckBox配置',
+          key: 'configCheckBox',
+          column: 2
+        },
         chkboxItems: [{}],
+        radioModule: {
+          label: 'Radio配置',
+          description: 'Radio配置',
+          key: 'configRadio',
+          column: 2
+        },
         radioItems: [{}],
+        comboModule: {
+          label: 'ComboBox配置',
+          description: 'ComboBox配置',
+          key: 'configComboBox',
+          column: 2
+        },
         comboItems: [{}]
 			}
 		},
@@ -93,11 +121,14 @@
           dataType: 'json',
           success: function (data) {
             console.log(data);
-            vue.builtDom(data[0].entityList);
+            vue.builtGlobalDom(data[0].entityList);
+            vue.builtCheckBoxDom(data[1]);
+            vue.builtRadioDom(data[2]);
+            vue.builtComboDom(data[3]);
           }
         });
       },
-      builtDom: function (data) {
+      builtGlobalDom: function (data) {
         var i = 0 ;
         for (i in data) {
           var tmp = {};
@@ -112,6 +143,22 @@
           tmp.value = data[i].value;
           this.items.push(tmp);
         }
+      },
+      builtCheckBoxDom: function (data) {
+        this.radioModule.label = data.label;
+        this.radioModule.key = data.key;
+        this.radioModule.description = data.description;
+        this.radioModule.column = data.column;
+        var i = 0;
+        for (i in data) {
+
+        }
+      },
+      builtComboDom: function (data) {
+
+      },
+      builtRadioDom: function (data) {
+
       }
 		},
 		mounted: function() {
