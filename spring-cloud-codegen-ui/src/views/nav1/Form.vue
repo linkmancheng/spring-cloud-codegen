@@ -10,7 +10,7 @@
                   <strong data-v-fae5bece="" class="title">{{ module.label }}</strong>
                   <h5>{{ module.description }}</h5>
                   <div class="form-group" v-if="module.entityList.length > 0" v-for="(item,index) in module.entityList">
-                    <label class="col-sm-2 control-label">{{ item.label }}</label>
+                    <label class="col-sm-2 control-label" :style="(item.type =='CHECKBOX')?'margin-top: -6px ! important':''">{{ item.label }}</label>
                     <div class="col-sm-8">
                       <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value">
                       <el-switch v-if="item.type == 'CHECKBOX'" v-model="modules[number].entityList[index].value" :name="item.key"></el-switch>
