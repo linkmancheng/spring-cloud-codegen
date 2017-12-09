@@ -20,8 +20,8 @@ import org.slf4j.LoggerFactory;
 
 import com.venus.cloud.codegen.constant.SkeletonConstant;
 import com.venus.cloud.codegen.entity.SkeletonGroup;
+import com.venus.cloud.codegen.parser.SkeletonXmlParser;
 import com.venus.cloud.codegen.property.SkeletonProperties;
-import com.venus.cloud.codegen.xml.SkeletonXmlParser;
 
 public class SkeletonConfigTransport {
     private static final Logger LOG = LoggerFactory.getLogger(SkeletonConfigTransport.class);
@@ -45,7 +45,7 @@ public class SkeletonConfigTransport {
 
         try {
             skeletonXmlParser = new SkeletonXmlParser(skeletonDataProperties);
-            skeletonXmlParser.parsePath(SKELETON_DESCRIPTION_FILE);
+            skeletonXmlParser.parsePath(SKELETON_DESCRIPTION_FILE, SkeletonConstant.ENCODING_UTF_8);
         } catch (IOException e) {
             LOG.error("Parse xml failed", e);
             e.printStackTrace();
