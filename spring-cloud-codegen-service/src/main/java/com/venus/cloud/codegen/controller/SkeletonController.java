@@ -1,4 +1,4 @@
-package com.venus.cloud.codegen;
+package com.venus.cloud.codegen.controller;
 
 /**
  * <p>Title: Nepxion Skeleton Generator</p>
