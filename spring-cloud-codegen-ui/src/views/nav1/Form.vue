@@ -4,11 +4,13 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="ibox float-e-margins">
-						<div class="ibox-title">
-							<h5>请填写需要生成的<span class="text-navy">应用信息</span>，选择需要使用的<span class="text-navy">Spring Cloud组件</span>、<span class="text-navy">其它组件</span></h5>
-						</div>
 						<div class="ibox-content">
 							<form method="POST" class="form-horizontal" action="http://localhost:2222/download" enctype="text/plain">
+                <div class="module-item" v-for="(module,number) in modules">
+                  <strong data-v-fae5bece="" class="title">{{ module.label }}</strong>
+                  <h5>{{ module.description }}</h5>
+                  <hr>
+                </div>
                 <div class="form-group" v-for="(item,index) in items">
                   <label class="col-sm-2 control-label">{{ item.key }}</label>
                   <div class="col-sm-8">
@@ -20,15 +22,6 @@
                     <span v-if="item.type != 'COMBOBOX'">{{ item.label }}</span>
                   </div>
                 </div>
-
-                <strong data-v-fae5bece="" class="title">{{ chkboxModule.label }}</strong>
-                <h5>{{ chkboxModule.description }}</h5>
-
-                <strong data-v-fae5bece="" class="title">{{ radioModule.label }}</strong>
-                <h5>{{ radioModule.description }}</h5>
-
-                <strong data-v-fae5bece="" class="title">{{ comboModule.label }}</strong>
-                <h5>{{ comboModule.description }}</h5>
 
 								<div class="hr-line-dashed"></div>
 								<div class="form-group" style="text-align:center;">
@@ -80,6 +73,7 @@
 				radioValue: 'middle',
 				radioValues: 'a',
 				checkboxValue: ['one'],
+        modules: [{}],
         items: [{}],
 			}
 		},
@@ -99,13 +93,24 @@
           url: 'http://localhost:2222/' + url,
           dataType: 'json',
           success: function (data) {
-            console.log(data);
-            vue.builtGlobalDom(data[0].entityList);
-            vue.builtCheckBoxDom(data[1]);
-            vue.builtRadioDom(data[2]);
-            vue.builtComboDom(data[3]);
+            vue.builtModules(data);
+            console.log(vue.modules);
+//            vue.builtGlobalDom(data[0].entityList);
           }
         });
+      },
+      builtModules: function (data) {
+        var i = 0;
+        for (i in data) {
+          var tmp = {};
+          tmp.key = data[i].key;
+          tmp.label = data[i].label;
+          tmp.description = data[i].description;
+          tmp.column = data[i].column;
+          tmp.entityList = data[i].entityList;
+          console.log(tmp);
+          this.modules.push(tmp);
+        }
       },
       builtGlobalDom: function (data) {
         var i = 0 ;
