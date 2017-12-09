@@ -53,27 +53,7 @@
 				select2Style: {//select2-style样式
 					width: '100%'
 				},
-				form: {
-					name: '',
-					region: '',
-					date1: '',
-					date2: '',
-					delivery: false,
-					type: [],
-					resource: '',
-					desc: ''
-				},
-				options:{
-					proposal:[
-						{ id: '1.8', text: '1.8' },
-						{ id: '1.5', text: '1.5' },
-					],
-				},
-				radioValue: 'middle',
-				radioValues: 'a',
-				checkboxValue: ['one'],
         modules: [{}],
-        items: [{}],
 			}
 		},
     created () {
@@ -93,8 +73,6 @@
           dataType: 'json',
           success: function (data) {
             vue.builtModules(data);
-            console.log(vue.modules);
-//            vue.builtGlobalDom(data[0].entityList);
           }
         });
       },
@@ -109,23 +87,7 @@
           tmp.entityList = data[i].entityList;
           this.modules.push(tmp);
         }
-      },
-      builtGlobalDom: function (data) {
-        var i = 0 ;
-        for (i in data) {
-          var tmp = {};
-          tmp.defaultable = data[i].defaultable;
-          tmp.editable = data[i].editable;
-          tmp.emptiable = data[i].emptiable;
-          tmp.highlightable = data[i].highlightable;
-          tmp.key = data[i].key;
-          tmp.label = data[i].label;
-          tmp.options = data[i].options;
-          tmp.type = data[i].type;
-          tmp.value = data[i].value;
-          this.items.push(tmp);
-        }
-      },
+      }
 
 		},
 		mounted: function() {
