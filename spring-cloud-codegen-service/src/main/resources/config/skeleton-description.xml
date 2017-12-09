@@ -6,9 +6,10 @@
         <description>核心框架</description>
         <entity>
             <key>security</key>
-            <label>Security</label>
+            <api-codegen>Security</api-codegen>
             <description>Secure your application via spring-security</description>
             <type>CHECKBOX</type>
+            <value>false</value>
             <highlightable>true</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
@@ -19,6 +20,7 @@
             <label>Aspects</label>
             <description>Secure your application via spring-security</description>
             <type>CHECKBOX</type>
+            <value>false</value>
             <highlightable>true</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
@@ -35,6 +37,7 @@
             <label>Web</label>
             <description>Full-stack web development with Tomcat and Spring MVC</description>
             <type>CHECKBOX</type>
+            <value>false</value>
             <highlightable>false</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
@@ -45,6 +48,7 @@
             <label>Websocket</label>
             <description>Websocket development with SockJS and STOMP</description>
             <type>CHECKBOX</type>
+            <value>false</value>
             <highlightable>false</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
@@ -55,6 +59,7 @@
             <label>Web Services</label>
             <description>Contract-first SOAP service development with Spring Web Services</description>
             <type>CHECKBOX</type>
+            <value>false</value>
             <highlightable>false</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
@@ -71,6 +76,7 @@
             <label>JPA</label>
             <description>Java Persistence API including spring-data-jpa, spring-orm and Hibernate</description>
             <type>RADIO</type>
+            <value>false</value>
             <highlightable>false</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
@@ -88,6 +94,7 @@
             <label>Eureka Discovery </label>
             <description>Service discovery using spring-cloud-netflix and Eureka</description>
             <type>COMBOBOX</type>
+            <value>false</value>
             <options>a;b;c</options>
             <highlightable>false</highlightable>
             <defaultable>false</defaultable>
