@@ -1,6 +1,7 @@
 # Output Directory
 target/
 tmp/
+ui-old/
 
 # C pre-compile
 *.gch
