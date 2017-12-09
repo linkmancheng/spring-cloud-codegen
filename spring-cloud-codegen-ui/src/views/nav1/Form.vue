@@ -81,27 +81,6 @@
 				radioValues: 'a',
 				checkboxValue: ['one'],
         items: [{}],
-        chkboxModule: {
-				  label: 'CheckBox配置',
-          description: 'CheckBox配置',
-          key: 'configCheckBox',
-          column: 2
-        },
-        chkboxItems: [{}],
-        radioModule: {
-          label: 'Radio配置',
-          description: 'Radio配置',
-          key: 'configRadio',
-          column: 2
-        },
-        radioItems: [{}],
-        comboModule: {
-          label: 'ComboBox配置',
-          description: 'ComboBox配置',
-          key: 'configComboBox',
-          column: 2
-        },
-        comboItems: [{}]
 			}
 		},
     created () {
@@ -144,22 +123,7 @@
           this.items.push(tmp);
         }
       },
-      builtCheckBoxDom: function (data) {
-        this.radioModule.label = data.label;
-        this.radioModule.key = data.key;
-        this.radioModule.description = data.description;
-        this.radioModule.column = data.column;
-        var i = 0;
-        for (i in data) {
 
-        }
-      },
-      builtComboDom: function (data) {
-
-      },
-      builtRadioDom: function (data) {
-
-      }
 		},
 		mounted: function() {
 
