@@ -6,7 +6,7 @@
         <description>核心框架</description>
         <entity>
             <key>security</key>
-            <api-codegen>Security</api-codegen>
+            <label>Security</label>
             <description>Secure your application via spring-security</description>
             <type>CHECKBOX</type>
             <value>false</value>
