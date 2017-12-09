@@ -13,10 +13,10 @@
                     <label class="col-sm-2 control-label">{{ item.label }}</label>
                     <div class="col-sm-8">
                       <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value">
-                      <!--<el-switch v-if="item.type == 'CHECKBOX'" v-model="items[index].value" :name="item.key"></el-switch>-->
-                      <!--<el-select v-if="item.type == 'COMBOBOX'" v-model="items[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">-->
-                        <!--<el-option v-if="item.type == 'COMBOBOX'" v-for="option in item.options" :label="option" :value="option"></el-option>-->
-                      <!--</el-select>-->
+                      <el-switch v-if="item.type == 'CHECKBOX'" v-model="modules[number].entityList[index].value" :name="item.key"></el-switch>
+                      <el-select v-if="item.type == 'COMBOBOX'" v-model="modules[number].entityList[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
+                        <el-option v-if="item.type == 'COMBOBOX'" v-for="option in item.options" :label="option" :value="option"></el-option>
+                      </el-select>
                       <span v-if="item.type != 'COMBOBOX'">{{ item.description }}</span>
                     </div>
                   </div>
