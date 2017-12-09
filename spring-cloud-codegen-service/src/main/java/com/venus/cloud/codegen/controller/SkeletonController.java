@@ -75,7 +75,7 @@ public class SkeletonController {
         headers.add("Expires", "0");
         headers.add("charset", "utf-8");
         //设置下载文件名
-        String filename = URLEncoder.encode("generate", "UTF-8");
+        String filename = URLEncoder.encode("generate.zip", "UTF-8");
         headers.add("Content-Disposition", "attachment;filename=\"" + filename + "\"");
 
         Resource resource = new InputStreamResource(new ByteArrayInputStream(bytes));
