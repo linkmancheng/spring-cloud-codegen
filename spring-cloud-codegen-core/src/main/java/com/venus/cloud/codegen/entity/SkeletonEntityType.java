@@ -13,6 +13,7 @@ package com.venus.cloud.codegen.entity;
 public enum SkeletonEntityType {
     TEXTFIELD("TEXTFIELD"),
     CHECKBOX("CHECKBOX"),
+    RADIO("RADIO"),    
     COMBOBOX("COMBOBOX");
 
     private String value;
