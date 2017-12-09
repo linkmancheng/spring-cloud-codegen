@@ -1,6 +1,7 @@
 package com.venus.cloud.engine.service.impl;
 
 import java.io.File;
+import java.util.Map;
 
 import com.venus.cloud.engine.service.CodeGenEngineService;
 import io.spring.initializr.generator.CommandLineHelpGenerator;
@@ -29,7 +30,6 @@ public class CodeGenEngineServiceImpl implements CodeGenEngineService {
 
     @Override
     public File generateProjectStructure(ProjectRequest request) {
-        File dir = projectGenerator.generateProjectStructure(request);
-        return dir;
+        return projectGenerator.generateProjectStructure(request);
     }
 }
