@@ -1,5 +1,5 @@
 <template>
-	<el-row class="container">
+	<el-row class="container" style="padding-left: 0px; padding-right: 0px;">
 		<el-col :span="24" class="header">
 			<el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">
 				{{collapsed?'':sysName}}
