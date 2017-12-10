@@ -5,7 +5,7 @@
 				<div class="col-sm-12">
 					<div class="ibox float-e-margins">
 						<div class="ibox-content">
-							<form method="POST" class="form-horizontal" action="http://localhost:2222/download" enctype="text/plain">
+							<form method="POST" class="form-horizontal" action="http://localhost:2222/downloadResponse" enctype="text/plain">
                 <div class="module-item" v-for="(module,number) in modules">
                   <strong data-v-fae5bece="" class="title">{{ module.label }}</strong>
                   <h5>{{ module.description }}</h5>
