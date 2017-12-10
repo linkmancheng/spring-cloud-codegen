@@ -7,12 +7,10 @@
             <div class="ibox-content">
               <form method="POST" class="form-horizontal" action="http://localhost:2222/downloadResponse" enctype="text/plain">
                 <div class="module-item" v-for="(module,number) in modules">
-                  <div class="form-group" v-if="module.entityList[0].type != 'RADIO'" v-for="(item,index) in module.entityList">
-                    <label v-if="item.type != 'RADIO'" class="col-sm-2 control-label">{{ item.label }}</label>
-                    <div class="col-sm-8" v-if="item.type != 'RADIO'">
+                  <div class="form-group" v-if="module.entityList[0].type != 'RADIO' && item.type != 'CHECKBOX'" v-for="(item,index) in module.entityList">
+                    <label v-if="item.type != 'RADIO' && item.type != 'CHECKBOX'" class="col-sm-2 control-label">{{ item.label }}</label>
+                    <div class="col-sm-8" v-if="item.type != 'RADIO' && item.type != 'CHECKBOX'">
                       <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value">
-                      <el-radio v-if="item.type == 'CHECKBOX'" v-model="modules[number].entityList[index].value" :name="item.key" :label="true">是</el-radio>
-                      <el-radio v-if="item.type == 'CHECKBOX'" v-model="modules[number].entityList[index].value" :name="item.key" :label="false">否</el-radio>
                       <el-select v-if="item.type == 'COMBOBOX'" v-model="modules[number].entityList[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
                         <el-option v-if="item.type == 'COMBOBOX'" v-for="option in item.options" :label="option" :value="option"></el-option>
                       </el-select>
@@ -22,6 +20,16 @@
                     <label class="col-sm-2 control-label" v-if="index == 1">{{ module.label }}</label>
                     <div class="col-sm-10" v-if="index == 1">
                       <el-radio v-for="(radio,rnum) in module.entityList" :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
+                    </div>
+                  </div>
+                  <div class="form-group" v-else-if="module.entityList[0].type == 'CHECKBOX' && index == 1">
+                    <label class="col-sm-2 control-label" v-if="index == 1" style="margin-top: -7px;">{{ module.label }}</label>
+                    <div class="col-sm-10" v-if="index == 1">
+                      <el-checkbox-group v-model="modules[number].values">
+                        <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-4'">
+                          <el-checkbox  :label="chkbox.label" :name="module.key+'[]'" style="color:#666"></el-checkbox>
+                        </div>
+                      </el-checkbox-group>
                     </div>
                   </div>
                   <hr>
@@ -49,9 +57,13 @@
   import ElSwitch from "../../../node_modules/element-ui/packages/switch/src/component.vue";
   import ElRadio from "../../../node_modules/element-ui/packages/radio/src/radio.vue";
   import N3Radio from "../../../node_modules/N3-components/src/Radio/n3Radio.vue";
+  import ElCheckboxGroup from "../../../node_modules/element-ui/packages/checkbox/src/checkbox-group.vue";
+  import ElCheckbox from "../../../node_modules/element-ui/packages/checkbox/src/checkbox.vue";
 
   export default {
     components: {
+      ElCheckbox,
+      ElCheckboxGroup,
       N3Radio,
       ElRadio,
       ElSwitch},
@@ -94,6 +106,7 @@
           tmp.description = data[i].description;
           tmp.column = data[i].column;
           tmp.entityList = data[i].entityList;
+          tmp.values = [];
           this.modules.push(tmp);
         }
       }
