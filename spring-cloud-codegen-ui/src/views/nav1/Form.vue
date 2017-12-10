@@ -19,15 +19,18 @@
                   </div>
                   <div class="form-group" v-else-if="module.entityList[0].type == 'RADIO' && index == 1">
                     <label class="col-sm-2 control-label" v-if="index == 1">{{ module.label }}</label>
-                    <div v-for="(radio,rnum) in module.entityList" class="col-sm-2" v-if="index == 1">
-                      <el-radio  :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
+                    <div class="col-sm-10">
+                      <div v-for="(radio,rnum) in module.entityList" class="col-sm-2" v-if="index == 1">
+                        <el-radio  :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
+                      </div>
                     </div>
+
                   </div>
                   <div class="form-group" v-else-if="module.entityList[0].type == 'CHECKBOX' && index == 1">
                     <label class="col-sm-2 control-label" v-if="index == 1" style="margin-top: -7px;">{{ module.label }}</label>
                     <div class="col-sm-10" v-if="index == 1">
                       <el-checkbox-group v-model="modules[number].values">
-                        <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-4'">
+                        <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-2'">
                           <el-checkbox  :label="chkbox.label" :name="chkbox.key" style="color:#666" value="false"></el-checkbox>
                           <span v-if="chkbox.defaultable" class="recommend">（推荐）</span>
                         </div>
