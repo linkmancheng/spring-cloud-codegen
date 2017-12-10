@@ -128,53 +128,6 @@
         </entity>
     </group>
 
-    <group>
-        <key>configCheckBox</key>
-        <label>CheckBox配置</label>
-        <description>CheckBox配置</description>
-        <column>3</column>
-        <entity>
-            <key>checkBox1</key>
-            <label>checkBox1</label>
-            <description>checkBox1</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>checkBox2</key>
-            <label>checkBox2</label>
-            <description>checkBox2</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>checkBox3</key>
-            <label>checkBox3</label>
-            <description>checkBox3</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>checkBox4</key>
-            <label>checkBox4</label>
-            <description>checkBox4</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-    </group>
-
 
     <group>
         <key>docker</key>
