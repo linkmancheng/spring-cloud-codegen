@@ -2,33 +2,12 @@
 <skeleton>
     <group>
         <key>project</key>
-        <label>工程配置</label>
-        <description>工程配置</description>
-        <entity>
-            <key>basePackage</key>
-            <label>上层包路径(basePackage)</label>
-            <description>【必改项】该路径会作为所有Java代码的上层路径。moduleName、basePackage和projectType三者组合起来解析出相关目录和结构规则，例如moduleName=payment-ccb，basePackage=com.nepxion，projectType=server，那么工程名为payment-ccb-server，类路径为com.nepxion.payment.ccb.server
-            </description>
-            <type>TEXTFIELD</type>
-            <highlightable>true</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>moduleName</key>
-            <label>工程的模块名(moduleName)</label>
-            <description>【必改项】首字母必须小写，中间只允许出现“-”</description>
-            <type>TEXTFIELD</type>
-            <highlightable>true</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
+        <label>基本配置</label>
+        <description></description>
         <entity>
             <key>pomGroupId</key>
-            <label>Pom Group Id</label>
-            <description>【必改项】Pom Group Id</description>
+            <label>Group</label>
+            <description></description>
             <type>TEXTFIELD</type>
             <highlightable>true</highlightable>
             <defaultable>false</defaultable>
@@ -37,28 +16,53 @@
         </entity>
         <entity>
             <key>pomArtifactId</key>
-            <label>Pom Artifact Id</label>
-            <description>【必改项】Pom Artifact Id</description>
+            <label>Artifact</label>
+            <description></description>
             <type>TEXTFIELD</type>
             <highlightable>true</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
+
         <entity>
-            <key>pomName</key>
-            <label>Pom Name</label>
-            <description>【必改项】Pom Name</description>
+            <key>basePackage</key>
+            <label>上层包路径</label>
+            <description></description>
+            <type>TEXTFIELD</type>
+            <value>com.example</value>
+            <highlightable>true</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+        <entity>
+            <key>AppName</key>
+            <label>App名称</label>
+            <description>例如:spring.application.name=xxx</description>
             <type>TEXTFIELD</type>
             <highlightable>true</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
+
+        <entity>
+            <key>port</key>
+            <label>端口</label>
+            <description></description>
+            <type>TEXTFIELD</type>
+            <highlightable>true</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
         <entity>
             <key>pomVersion</key>
-            <label>Pom Version</label>
-            <description>Pom Version</description>
+            <label>version</label>
+            <description></description>
             <type>COMBOBOX</type>
             <options>1.0.0</options>
             <highlightable>false</highlightable>
@@ -66,32 +70,11 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-        <entity>
-            <key>springCloudVersion</key>
-            <label>Spring Cloud Version</label>
-            <description>Spring Cloud Version</description>
-            <type>COMBOBOX</type>
-            <options>Dalston.SR4;Edgware.RELEASE</options>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>springBootVersion</key>
-            <label>Spring Boot Version</label>
-            <description>Spring Boot Version</description>
-            <type>COMBOBOX</type>
-            <options>1.5.6.RELEASE</options>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
+
         <entity>
             <key>javaVersion</key>
-            <label>Java Version</label>
-            <description>Spring Boot Version</description>
+            <label>jdk版本</label>
+            <description></description>
             <type>COMBOBOX</type>
             <options>1.8;1.7;1.6</options>
             <highlightable>false</highlightable>
@@ -99,31 +82,93 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
+
     </group>
+
+    <group>
+        <key>appType</key>
+        <label>应用类型</label>
+        <description></description>
+        <column>3</column>
+        <entity>
+            <key>Spring Boot</key>
+            <label>Spring Boot</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>Spring Cloud</key>
+            <label>Spring Cloud</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>Venus Cloud</key>
+            <label>Venus Cloud</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>war</key>
+            <label>war应用</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+    </group>
+
+    <group>
+        <key>version</key>
+        <label>基础框架版本</label>
+        <description></description>
+        <entity>
+            <key>springBootVersion</key>
+            <label>Spring Boot</label>
+            <description></description>
+            <type>COMBOBOX</type>
+            <options>1.5.6.RELEASE</options>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+        <entity>
+            <key>spring-cloud-Version</key>
+            <label>Spring Cloud</label>
+            <description>Spring Cloud</description>
+            <type>COMBOBOX</type>
+            <options>Dalston.SR4;Edgware.RELEASE</options>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+    </group>
+
     <group>
         <key>framework</key>
-        <label>框架配置</label>
-        <description>框架配置</description>
-        <entity>
-            <key>serviceName</key>
-            <label>服务名(serviceName)</label>
-            <description>【必改项】Spring Cloud服务名</description>
-            <type>TEXTFIELD</type>
-            <highlightable>true</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>port</key>
-            <label>端口(prot)</label>
-            <description>【必改项】Spring Cloud端口号</description>
-            <type>TEXTFIELD</type>
-            <highlightable>true</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
+        <label></label>
+        <description></description>
         <entity>
             <key>eurekaEnabled</key>
             <label>Eureka组件(eurekaEnabled)</label>
