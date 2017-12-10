@@ -37,6 +37,19 @@
             <editable>true</editable>
         </entity>
 
+
+        <entity>
+            <key>pomVersion</key>
+            <label>version</label>
+            <description></description>
+            <type>COMBOBOX</type>
+            <options>1.0.0</options>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
         <entity>
             <key>javaVersion</key>
             <label>jdk版本</label>
@@ -51,35 +64,33 @@
 
         <!--
         <entity>
-            <key>springBootVersion</key>
-            <label>Spring Boot</label>
-            <description></description>
-            <type>COMBOBOX</type>
-            <options>1.5.6.RELEASE</options>
-            <highlightable>false</highlightable>
+            <key>AppName</key>
+            <label>App名称</label>
+            <description>例如:spring.application.name=xxx</description>
+            <type>TEXTFIELD</type>
+            <highlightable>true</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
 
         <entity>
-            <key>spring-cloud-Version</key>
-            <label>Spring Cloud</label>
-            <description>Spring Cloud</description>
-            <type>COMBOBOX</type>
-            <options>Dalston.SR4;Edgware.RELEASE</options>
-            <highlightable>false</highlightable>
+            <key>port</key>
+            <label>端口</label>
+            <description></description>
+            <type>TEXTFIELD</type>
+            <highlightable>true</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-        -->
+         -->
 
     </group>
 
     <group>
         <key>appType</key>
-        <label>应用类型</label>
+        <label></label>
         <description></description>
         <column>3</column>
         <entity>
@@ -128,33 +139,60 @@
         </entity>
     </group>
 
-
     <group>
-        <key>docker</key>
-        <label>docker模板</label>
+        <key>version</key>
+        <label></label>
         <description></description>
-        <column>3</column>
         <entity>
-            <key>true</key>
-            <label>是</label>
+            <key>springBootVersion</key>
+            <label>Spring Boot</label>
             <description></description>
-            <type>RADIO</type>
-            <value>false</value>
+            <type>COMBOBOX</type>
+            <options>1.5.6.RELEASE</options>
             <highlightable>false</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
+
         <entity>
-            <key>false</key>
-            <label>否</label>
-            <description></description>
-            <type>RADIO</type>
-            <value>false</value>
+            <key>spring-cloud-Version</key>
+            <label>Spring Cloud</label>
+            <description>Spring Cloud</description>
+            <type>COMBOBOX</type>
+            <options>Dalston.SR4;Edgware.RELEASE</options>
             <highlightable>false</highlightable>
             <defaultable>false</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
     </group>
+
+    <!--
+    <group>
+        <key>framework</key>
+        <label></label>
+        <description></description>
+        <entity>
+            <key>eurekaEnabled</key>
+            <label>Eureka组件(eurekaEnabled)</label>
+            <description>Eureka组件(推荐)</description>
+            <type>CHECKBOX</type>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>eurekaUrl</key>
+            <label>Eureka地址(eurekaUrl)</label>
+            <description>【必改项】Eureka地址</description>
+            <type>TEXTFIELD</type>
+            <highlightable>true</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+    </group>
+    -->
 </skeleton>
