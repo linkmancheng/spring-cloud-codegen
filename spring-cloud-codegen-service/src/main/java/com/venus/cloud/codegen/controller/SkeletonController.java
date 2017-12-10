@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.venus.cloud.codegen.entity.SkeletonGroup;
+import com.venus.cloud.codegen.generator.server.PomXmlGenerator;
 import com.venus.cloud.codegen.generator.server.java.ServerApplicationClassGenerator;
 import com.venus.cloud.codegen.generator.server.resources.ApplicationPropertiesGenerator;
 import com.venus.cloud.codegen.property.SkeletonProperties;
@@ -58,6 +59,7 @@ public class SkeletonController {
             public void generate(String path, SkeletonProperties skeletonProperties) throws Exception {
                 new ServerApplicationClassGenerator(path, "server", skeletonProperties).generate();
                 new ApplicationPropertiesGenerator(path, "server", skeletonProperties).generate();
+                new PomXmlGenerator(path, "server", skeletonProperties).generate();
             }
         };
     }
