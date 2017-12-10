@@ -34,6 +34,13 @@ public class CodeGenEngineServiceImpl implements CodeGenEngineService {
 
     @Override
     public File createDistributionFile(File dir, String extension) {
-        return null;
+        return projectGenerator.createDistributionFile(dir, extension);
+    }
+
+    @Override
+    public String getWrapperScript(ProjectRequest request) {
+        String script = "gradle".equals(request.getBuild()) ? "gradlew" : "mvnw";
+        return request.getBaseDir() != null
+            ? request.getBaseDir() + "/" + script : script;
     }
 }
