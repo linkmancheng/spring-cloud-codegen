@@ -18,7 +18,7 @@
                       </el-select>
                     </div>
                   </div>
-                  <div class="form-group" v-else-if="module.entityList[0].type == 'RADIO'">
+                  <div class="form-group" v-else-if="module.entityList[0].type == 'RADIO' && index == 1">
                     <label class="col-sm-2 control-label" v-if="index == 1">{{ module.label }}</label>
                     <div class="col-sm-10" v-if="index == 1">
                       <el-radio v-for="(radio,rnum) in module.entityList" :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
