@@ -3,10 +3,21 @@
     <group>
         <key>configGloble</key>
         <label>全局配置</label>
-        <description>全局配置</description>
+        <description></description>
+        <entity>
+            <key>appName</key>
+            <label>应用名</label>
+            <description></description>
+            <type>TEXTFIELD</type>
+            <value>demo</value>
+            <highlightable>true</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
         <entity>
             <key>moduleName</key>
-            <label>工程的模块名</label>
+            <label>模块名</label>
             <description>【必改项】首字母必须小写，中间只允许出现“-”</description>
             <type>TEXTFIELD</type>
             <value>demo</value>
@@ -46,7 +57,7 @@
         <entity>
             <key>security</key>
             <label>Security</label>
-            <description>Secure your application via spring-security</description>
+            <description></description>
             <type>CHECKBOX</type>
             <value>false</value>
             <highlightable>true</highlightable>
@@ -57,7 +68,7 @@
         <entity>
             <key>aspects</key>
             <label>Aspects</label>
-            <description>Secure your application via spring-security</description>
+            <description></description>
             <type>CHECKBOX</type>
             <value>false</value>
             <highlightable>true</highlightable>
@@ -74,7 +85,7 @@
         <entity>
             <key>Web</key>
             <label>Web</label>
-            <description>Full-stack web development with Tomcat and Spring MVC</description>
+            <description></description>
             <type>CHECKBOX</type>
             <value>false</value>
             <highlightable>false</highlightable>
@@ -85,7 +96,7 @@
         <entity>
             <key>Websocket</key>
             <label>Websocket</label>
-            <description>Websocket development with SockJS and STOMP</description>
+            <description></description>
             <type>CHECKBOX</type>
             <value>false</value>
             <highlightable>false</highlightable>
@@ -96,7 +107,7 @@
         <entity>
             <key>WebServices</key>
             <label>Web Services</label>
-            <description>Contract-first SOAP service development with Spring Web Services</description>
+            <description></description>
             <type>CHECKBOX</type>
             <value>false</value>
             <highlightable>false</highlightable>
@@ -107,13 +118,13 @@
     </group>
     <group>
         <key>appType</key>
-        <label>AppType</label>
+        <label>应用类型</label>
         <description>应用类型</description>
         <column>3</column>
         <entity>
             <key>Spring Boot</key>
             <label>Spring Boot</label>
-            <description>Java Persistence API including spring-data-jpa, spring-orm and Hibernate</description>
+            <description></description>
             <type>RADIO</type>
             <value>false</value>
             <highlightable>false</highlightable>
@@ -141,7 +152,7 @@
         <entity>
             <key>Eureka Discovery </key>
             <label>Eureka Discovery </label>
-            <description>Service discovery using spring-cloud-netflix and Eureka</description>
+            <description></description>
             <type>COMBOBOX</type>
             <value>false</value>
             <options>a;b;c</options>
