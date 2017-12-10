@@ -177,8 +177,8 @@
         <description></description>
         <column>3</column>
         <entity>
-            <key>jpa1</key>
-            <label>JPA1</label>
+            <key>SpringBoot</key>
+            <label>SpringBoot</label>
             <description>Java Persistence API including spring-data-jpa, spring-orm and Hibernate</description>
             <type>RADIO</type>
             <value>false</value>
@@ -188,8 +188,8 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>jpa2</key>
-            <label>JPA2</label>
+            <key>SpringCloud</key>
+            <label>SpringCloud</label>
             <description>Java Persistence API including spring-data-jpa, spring-orm and Hibernate</description>
             <type>RADIO</type>
             <value>false</value>
@@ -199,7 +199,7 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>jpa3</key>
+            <key>JPA3</key>
             <label>JPA3</label>
             <description>Java Persistence API including spring-data-jpa, spring-orm and Hibernate</description>
             <type>RADIO</type>

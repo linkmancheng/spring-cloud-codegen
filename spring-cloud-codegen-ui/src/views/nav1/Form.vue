@@ -21,13 +21,12 @@
                     </div>
                   </div>
                   <div class="form-group" v-else-if="module.entityList[0].type == 'RADIO'">
-                    <label class="col-sm-2 control-label">{{ module.label }}</label>
-                    <div class="col-sm-10">
-                      <n3-radio-group v-model="radioValue" type="primary" style="margin-top: 7px;">
-                        <n3-radio label="left">Spring Boot应用<span class="text-navy">（推荐）</span></n3-radio>
-                        <n3-radio label="middle">Spring Cloud应用<span class="text-navy">（推荐）</span></n3-radio>
-                        <n3-radio label="right">Venus Cloud应用</n3-radio>
-                      </n3-radio-group>
+                    <label class="col-sm-2 control-label" v-if="index == 1">应用类型</label>
+                    <div class="col-sm-10" v-if="index == 1">
+                      <el-radio v-for="(radio,rnum) in module.entityList" :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
+                      <!--<n3-radio-group v-if="index == 1" v-model="modules[number].value" :name="module.key" style="margin-top: 7px;">-->
+                        <!--<n3-radio v-for="(radio,rnum) in module.entityList" :label="rnum"> {{ radio.label }} </n3-radio>-->
+                      <!--</n3-radio-group>-->
                     </div>
                   </div>
                   <hr>
@@ -54,9 +53,11 @@
   import $ from '@/../static/js/jquery'
   import ElSwitch from "../../../node_modules/element-ui/packages/switch/src/component.vue";
   import ElRadio from "../../../node_modules/element-ui/packages/radio/src/radio.vue";
+  import N3Radio from "../../../node_modules/N3-components/src/Radio/n3Radio.vue";
 
 	export default {
     components: {
+      N3Radio,
       ElRadio,
       ElSwitch},
     name: 'survey',
