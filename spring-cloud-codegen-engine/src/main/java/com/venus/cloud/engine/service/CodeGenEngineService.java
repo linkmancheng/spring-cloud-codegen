@@ -16,4 +16,13 @@ public interface CodeGenEngineService {
      */
     public File generateProjectStructure(ProjectRequest request);
 
+    /**
+     *
+     * @param dir 空工程目录的
+     * @param extension 下载压缩包扩展 zip
+     * @return
+     */
+    public File createDistributionFile(File dir, String extension);
+
+
 }

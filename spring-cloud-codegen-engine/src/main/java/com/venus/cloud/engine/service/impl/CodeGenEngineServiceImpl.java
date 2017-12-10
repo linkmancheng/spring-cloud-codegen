@@ -31,4 +31,9 @@ public class CodeGenEngineServiceImpl implements CodeGenEngineService {
     public File generateProjectStructure(ProjectRequest request) {
         return projectGenerator.generateProjectStructure(request);
     }
+
+    @Override
+    public File createDistributionFile(File dir, String extension) {
+        return null;
+    }
 }
