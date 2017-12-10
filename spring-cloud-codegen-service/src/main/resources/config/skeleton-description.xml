@@ -2,7 +2,7 @@
 <skeleton>
     <group>
         <key>configGloble</key>
-        <label>全局配置</label>
+        <label></label>
         <description></description>
         <entity>
             <key>appName</key>
@@ -51,8 +51,37 @@
         </entity>
     </group>
     <group>
+        <key>appType</key>
+        <label></label>
+        <description></description>
+        <column>3</column>
+        <entity>
+            <key>Spring Boot</key>
+            <label>Spring Boot</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>Spring Cloud</key>
+            <label>Spring Cloud</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+    </group>
+
+    <group>
         <key>code</key>
-        <label>Code</label>
+        <label></label>
         <description>核心框架</description>
         <entity>
             <key>security</key>
@@ -79,7 +108,7 @@
     </group>
     <group>
         <key>web</key>
-        <label>Web</label>
+        <label></label>
         <description></description>
         <column>3</column>
         <entity>
@@ -116,38 +145,11 @@
             <editable>true</editable>
         </entity>
     </group>
-    <group>
-        <key>appType</key>
-        <label>应用类型</label>
-        <description>应用类型</description>
-        <column>3</column>
-        <entity>
-            <key>Spring Boot</key>
-            <label>Spring Boot</label>
-            <description></description>
-            <type>RADIO</type>
-            <value>false</value>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>Spring Cloud</key>
-            <label>Spring Cloud</label>
-            <description></description>
-            <type>RADIO</type>
-            <value>false</value>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-    </group>
+
     <group>
         <key>Cloud Discovery</key>
-        <label>Cloud Discovery</label>
-        <description>ComboBox配置</description>
+        <label></label>
+        <description></description>
         <column>3</column>
         <entity>
             <key>Eureka Discovery </key>
