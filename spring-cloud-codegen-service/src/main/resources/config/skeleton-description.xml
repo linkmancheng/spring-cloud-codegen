@@ -168,7 +168,7 @@
             <description>Spring MVC</description>
             <type>CHECKBOX</type>
             <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
+            <defaultable>true</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
@@ -206,7 +206,7 @@
             <description>Zuul</description>
             <type>CHECKBOX</type>
             <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
+            <defaultable>true</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
@@ -228,7 +228,7 @@
             <description>hystrix</description>
             <type>CHECKBOX</type>
             <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
+            <defaultable>true</defaultable>
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
