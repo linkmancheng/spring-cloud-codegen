@@ -177,8 +177,8 @@
         <description></description>
         <column>3</column>
         <entity>
-            <key>jpa</key>
-            <label>JPA</label>
+            <key>jpa1</key>
+            <label>JPA1</label>
             <description>Java Persistence API including spring-data-jpa, spring-orm and Hibernate</description>
             <type>RADIO</type>
             <value>false</value>
@@ -187,7 +187,28 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
+        <entity>
+            <key>jpa2</key>
+            <label>JPA2</label>
+            <description>Java Persistence API including spring-data-jpa, spring-orm and Hibernate</description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>jpa3</key>
+            <label>JPA3</label>
+            <description>Java Persistence API including spring-data-jpa, spring-orm and Hibernate</description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
     </group>
     <group>
         <key>Cloud Discovery</key>

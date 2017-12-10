@@ -9,15 +9,25 @@
                 <div class="module-item" v-for="(module,number) in modules">
                   <strong data-v-fae5bece="" class="title">{{ module.label }}</strong>
                   <h5>{{ module.description }}</h5>
-                  <div class="form-group" v-if="module.entityList.length > 0" v-for="(item,index) in module.entityList">
-                    <label class="col-sm-2 control-label" :style="(item.type =='CHECKBOX')?'margin-top: -6px ! important':''">{{ item.label }}</label>
-                    <div class="col-sm-8">
+                  <div class="form-group" v-if="module.entityList[0].type != 'RADIO'" v-for="(item,index) in module.entityList">
+                    <label v-if="item.type != 'RADIO'" class="col-sm-2 control-label" :style="(item.type =='CHECKBOX')?'margin-top: -6px ! important':''">{{ item.label }}</label>
+                    <div class="col-sm-8" v-if="item.type != 'RADIO'">
                       <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value">
                       <el-switch v-if="item.type == 'CHECKBOX'" v-model="modules[number].entityList[index].value" :name="item.key"></el-switch>
                       <el-select v-if="item.type == 'COMBOBOX'" v-model="modules[number].entityList[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
                         <el-option v-if="item.type == 'COMBOBOX'" v-for="option in item.options" :label="option" :value="option"></el-option>
                       </el-select>
                       <span v-if="item.type != 'COMBOBOX'">{{ item.description }}</span>
+                    </div>
+                  </div>
+                  <div class="form-group" v-else-if="module.entityList[0].type == 'RADIO'">
+                    <label class="col-sm-2 control-label">应用类型</label>
+                    <div class="col-sm-10">
+                      <n3-radio-group v-model="radioValue" type="primary" style="margin-top: 7px;">
+                        <n3-radio label="left">Spring Boot应用<span class="text-navy">（推荐）</span></n3-radio>
+                        <n3-radio label="middle">Spring Cloud应用<span class="text-navy">（推荐）</span></n3-radio>
+                        <n3-radio label="right">Venus Cloud应用</n3-radio>
+                      </n3-radio-group>
                     </div>
                   </div>
                   <hr>
@@ -43,9 +53,12 @@
   import axios from 'axios'
   import $ from '@/../static/js/jquery'
   import ElSwitch from "../../../node_modules/element-ui/packages/switch/src/component.vue";
+  import ElRadio from "../../../node_modules/element-ui/packages/radio/src/radio.vue";
 
 	export default {
-    components: {ElSwitch},
+    components: {
+      ElRadio,
+      ElSwitch},
     name: 'survey',
 
 		data: function() {
