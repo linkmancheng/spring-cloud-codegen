@@ -10,7 +10,8 @@
                   <div class="form-group" v-if="module.entityList[0].type != 'RADIO' && item.type != 'CHECKBOX'" v-for="(item,index) in module.entityList">
                     <label v-if="item.type != 'RADIO' && item.type != 'CHECKBOX'" class="col-sm-2 control-label">{{ item.label }}</label>
                     <div class="col-sm-8" v-if="item.type != 'RADIO' && item.type != 'CHECKBOX'">
-                      <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value">
+                      <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value" required>
+                      <span v-if="item.highlightable && item.type == 'TEXTFIELD'" class="must-need">*</span>
                       <el-select v-if="item.type == 'COMBOBOX'" v-model="modules[number].entityList[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
                         <el-option v-if="item.type == 'COMBOBOX'" v-for="option in item.options" :label="option" :value="option"></el-option>
                       </el-select>
@@ -18,16 +19,20 @@
                   </div>
                   <div class="form-group" v-else-if="module.entityList[0].type == 'RADIO' && index == 1">
                     <label class="col-sm-2 control-label" v-if="index == 1">{{ module.label }}</label>
-                    <div class="col-sm-10" v-if="index == 1">
-                      <el-radio v-for="(radio,rnum) in module.entityList" :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
+                    <div class="col-sm-10">
+                      <div v-for="(radio,rnum) in module.entityList" class="col-sm-2" v-if="index == 1">
+                        <el-radio  :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
+                      </div>
                     </div>
+
                   </div>
                   <div class="form-group" v-else-if="module.entityList[0].type == 'CHECKBOX' && index == 1">
                     <label class="col-sm-2 control-label" v-if="index == 1" style="margin-top: -7px;">{{ module.label }}</label>
                     <div class="col-sm-10" v-if="index == 1">
                       <el-checkbox-group v-model="modules[number].values">
-                        <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-4'">
-                          <el-checkbox  :label="chkbox.label" :name="module.key+'[]'" style="color:#666"></el-checkbox>
+                        <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-2'">
+                          <el-checkbox  :label="chkbox.label" :name="chkbox.key" style="color:#666" value="false"></el-checkbox>
+                          <span v-if="chkbox.defaultable" class="recommend">（推荐）</span>
                         </div>
                       </el-checkbox-group>
                     </div>
@@ -118,6 +123,19 @@
   }
 </script>
 <style scoped>
+  .recommend {
+    color:#20a0ff;
+    padding-left: 15px;
+    font-size: 8pt;
+  }
+  .must-need{
+    color:#20a0ff;
+    font-size:15pt;
+    display: block;
+    position: absolute;
+    top:7px;
+    right:0px;
+  }
   .el-radio{
     color:#666;
     font-size:12px;
