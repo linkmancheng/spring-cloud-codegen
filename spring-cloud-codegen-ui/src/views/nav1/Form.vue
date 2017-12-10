@@ -21,7 +21,7 @@
                     </div>
                   </div>
                   <div class="form-group" v-else-if="module.entityList[0].type == 'RADIO'">
-                    <label class="col-sm-2 control-label">应用类型</label>
+                    <label class="col-sm-2 control-label">{{ module.label }}</label>
                     <div class="col-sm-10">
                       <n3-radio-group v-model="radioValue" type="primary" style="margin-top: 7px;">
                         <n3-radio label="left">Spring Boot应用<span class="text-navy">（推荐）</span></n3-radio>
