@@ -76,8 +76,61 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
+        <entity>
+            <key>Venus Cloud</key>
+            <label>Venus Cloud</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>war</key>
+            <label>war应用</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
     </group>
 
+    <group>
+        <key>version</key>
+        <label></label>
+        <description></description>
+        <column>3</column>
+        <entity>
+            <key>Spring Boot版本 </key>
+            <label>Spring Boot版本  </label>
+            <description></description>
+            <type>COMBOBOX</type>
+            <value>false</value>
+            <options>a;b;c</options>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+        <entity>
+            <key>Spring Cloud版本 </key>
+            <label>Spring Cloud版本 </label>
+            <description></description>
+            <type>COMBOBOX</type>
+            <value>false</value>
+            <options>a;b;c</options>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+    </group>
     <group>
         <key>code</key>
         <label></label>
@@ -143,25 +196,5 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-    </group>
-
-    <group>
-        <key>Cloud Discovery</key>
-        <label></label>
-        <description></description>
-        <column>3</column>
-        <entity>
-            <key>Eureka Discovery </key>
-            <label>Eureka Discovery </label>
-            <description></description>
-            <type>COMBOBOX</type>
-            <value>false</value>
-            <options>a;b;c</options>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-
     </group>
 </skeleton>
