@@ -23,7 +23,7 @@
 	export default {
 		data() {
 			return {
-				sysName:'Smart CodeGen',
+				sysName:'Spring Cloud',
 				collapsed:false,
 				sysUserName: '',
 				sysUserAvatar: '',
