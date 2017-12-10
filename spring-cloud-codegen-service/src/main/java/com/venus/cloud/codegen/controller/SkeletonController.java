@@ -35,8 +35,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.venus.cloud.codegen.constant.SkeletonConstant;
 import com.venus.cloud.codegen.entity.SkeletonGroup;
-import com.venus.cloud.codegen.example.server.java.MyApplicationClassGenerator;
-import com.venus.cloud.codegen.example.service.resources.MybatisGeneratorXmlGenerator;
+import com.venus.cloud.codegen.generator.server.java.ServerApplicationClassGenerator;
+import com.venus.cloud.codegen.generator.server.resources.ApplicationPropertiesGenerator;
 import com.venus.cloud.codegen.property.SkeletonProperties;
 import com.venus.cloud.codegen.transport.SkeletonConfigTransport;
 import com.venus.cloud.codegen.transport.SkeletonDataTransport;
@@ -59,8 +59,8 @@ public class SkeletonController {
         dataTransport = new SkeletonDataTransport() {
             @Override
             public void generate(String path, SkeletonProperties skeletonProperties) throws Exception {
-                new MyApplicationClassGenerator(path, "server", skeletonProperties).generate();
-                new MybatisGeneratorXmlGenerator(path, "service", skeletonProperties).generate();
+                new ServerApplicationClassGenerator(path, "server", skeletonProperties).generate();
+                new ApplicationPropertiesGenerator(path, "server", skeletonProperties).generate();
             }
         };
     }

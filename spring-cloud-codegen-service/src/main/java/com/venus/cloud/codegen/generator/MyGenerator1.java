@@ -1,4 +1,4 @@
-package com.venus.cloud.codegen.example;
+package com.venus.cloud.codegen.generator;
 
 /**
  * <p>Title: Nepxion Skeleton Generator</p>
@@ -10,8 +10,9 @@ package com.venus.cloud.codegen.example;
  * @version 1.0
  */
 
-import com.venus.cloud.codegen.example.server.java.MyApplicationClassGenerator;
-import com.venus.cloud.codegen.example.service.resources.MybatisGeneratorXmlGenerator;
+import com.venus.cloud.codegen.generator.server.PomXmlGenerator;
+import com.venus.cloud.codegen.generator.server.java.ServerApplicationClassGenerator;
+import com.venus.cloud.codegen.generator.server.resources.ApplicationPropertiesGenerator;
 import com.venus.cloud.codegen.property.SkeletonProperties;
 
 // MyGenerator1和MyGenerator2输出结果一致
@@ -31,12 +32,14 @@ public class MyGenerator1 {
             SkeletonProperties skeletonProperties = new SkeletonProperties(propertiesPath);
 
             // 创建Java类文件
-            // 模板文件MyApplication.java.template必须和MyApplicationClassGenerator放在同一个目录下
-            new MyApplicationClassGenerator(generatePath, "server", skeletonProperties).generate();
+            // 模板文件ServerApplication.java.template必须和ServerApplicationClassGenerator.java放在同一个目录下，下同
+            new ServerApplicationClassGenerator(generatePath, "server", skeletonProperties).generate();
 
             // 创建文件到resources目录下
-            // 模板文件mybatis-generator.xml.template必须和MybatisGeneratorXmlGenerator放在同一个目录下
-            new MybatisGeneratorXmlGenerator(generatePath, "service", skeletonProperties).generate();
+            new ApplicationPropertiesGenerator(generatePath, "server", skeletonProperties).generate();
+            
+            // 创建文件到目录下
+            new PomXmlGenerator(generatePath, "server", skeletonProperties).generate();
         } catch (Exception e) {
             e.printStackTrace();
         }

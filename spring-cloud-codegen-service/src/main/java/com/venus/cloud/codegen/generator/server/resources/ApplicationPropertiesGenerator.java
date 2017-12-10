@@ -1,4 +1,4 @@
-package com.venus.cloud.codegen.example.service.resources;
+package com.venus.cloud.codegen.generator.server.resources;
 
 /**
  * <p>Title: Nepxion Skeleton Generator</p>
@@ -10,20 +10,23 @@ package com.venus.cloud.codegen.example.service.resources;
  * @version 1.0
  */
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.venus.cloud.codegen.constant.SkeletonConstant;
 import com.venus.cloud.codegen.entity.SkeletonFileType;
 import com.venus.cloud.codegen.generator.SkeletonFileGenerator;
 import com.venus.cloud.codegen.property.SkeletonProperties;
 
-public class MybatisGeneratorXmlGenerator extends SkeletonFileGenerator {
+public class ApplicationPropertiesGenerator extends SkeletonFileGenerator {
     /**
      * 构造方法
      * @param generatePath 创建文件的顶级路径
      * @param projectType 工程类型
      * @param skeletonProperties 全局配置文件对象
      */
-    public MybatisGeneratorXmlGenerator(String generatePath, String projectType, SkeletonProperties skeletonProperties) {
-        super(generatePath, projectType, MybatisGeneratorXmlGenerator.class, skeletonProperties);
+    public ApplicationPropertiesGenerator(String generatePath, String projectType, SkeletonProperties skeletonProperties) {
+        super(generatePath, projectType, ApplicationPropertiesGenerator.class, skeletonProperties);
     }
 
     /**
@@ -34,7 +37,7 @@ public class MybatisGeneratorXmlGenerator extends SkeletonFileGenerator {
      * @param fileType 创建的文件类型
      * @param skeletonProperties 全局配置文件对象
      */
-    public MybatisGeneratorXmlGenerator(String generatePath, String projectType, String baseTemplatePath, SkeletonFileType fileType, SkeletonProperties skeletonProperties) {
+    public ApplicationPropertiesGenerator(String generatePath, String projectType, String baseTemplatePath, SkeletonFileType fileType, SkeletonProperties skeletonProperties) {
         super(generatePath, projectType, baseTemplatePath, fileType, skeletonProperties);
     }
 
@@ -43,7 +46,7 @@ public class MybatisGeneratorXmlGenerator extends SkeletonFileGenerator {
      */
     @Override
     protected String getFileName() {
-        return "mybatis-generator.xml";
+        return "application.properties";
     }
 
     /**
@@ -51,7 +54,7 @@ public class MybatisGeneratorXmlGenerator extends SkeletonFileGenerator {
      */
     @Override
     protected String getTemplateName() {
-        return "mybatis-generator.xml.template";
+        return "application.properties.template";
     }
 
     /**
@@ -67,6 +70,12 @@ public class MybatisGeneratorXmlGenerator extends SkeletonFileGenerator {
      */
     @Override
     protected Object getDataModel() {
-        return null;
+        Map<String, Object> dataModel = new HashMap<String, Object>();
+        // 注意：根据freemarker的规范，dataModel中的key似乎只能支持字母和数字，不支持符号，例如service.Name，service-Name都会抛错
+        dataModel.put("serviceName", skeletonProperties.getString("serviceName"));
+        dataModel.put("port", skeletonProperties.getString("port"));
+        dataModel.put("eurekaUrl", skeletonProperties.getString("eurekaUrl"));
+
+        return dataModel;
     }
 }
