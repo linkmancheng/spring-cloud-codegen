@@ -18,7 +18,7 @@
         <entity>
             <key>moduleName</key>
             <label>模块名</label>
-            <description>【必改项】首字母必须小写，中间只允许出现“-”</description>
+            <description></description>
             <type>TEXTFIELD</type>
             <value>demo</value>
             <highlightable>true</highlightable>
@@ -29,8 +29,7 @@
         <entity>
             <key>basePackage</key>
             <label>上层包路径</label>
-            <description>【必改项】该路径会作为所有Java代码的上层路径。moduleName、basePackage和projectType三者组合起来解析出相关目录和结构规则，例如moduleName=payment-ccb，basePackage=com.nepxion，projectType=server，那么工程名为payment-ccb-server，类路径为com.nepxion.payment.ccb.server
-            </description>
+            <description></description>
             <type>TEXTFIELD</type>
             <value>com.example</value>
             <highlightable>true</highlightable>
@@ -82,7 +81,7 @@
     <group>
         <key>code</key>
         <label></label>
-        <description>核心框架</description>
+        <description></description>
         <entity>
             <key>security</key>
             <label>Security</label>
