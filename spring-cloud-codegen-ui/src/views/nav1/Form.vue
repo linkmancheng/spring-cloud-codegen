@@ -19,7 +19,7 @@
                     </div>
                   </div>
                   <div class="form-group" v-else-if="module.entityList[0].type == 'RADIO'">
-                    <label class="col-sm-2 control-label" v-if="index == 1">应用类型</label>
+                    <label class="col-sm-2 control-label" v-if="index == 1">{{ module.label }}</label>
                     <div class="col-sm-10" v-if="index == 1">
                       <el-radio v-for="(radio,rnum) in module.entityList" :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
                     </div>
