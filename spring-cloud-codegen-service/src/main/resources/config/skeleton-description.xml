@@ -129,53 +129,6 @@
     </group>
 
     <group>
-        <key>configCheckBox</key>
-        <label>CheckBox配置</label>
-        <description>CheckBox配置</description>
-        <column>3</column>
-        <entity>
-            <key>checkBox1</key>
-            <label>checkBox1</label>
-            <description>checkBox1</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>checkBox2</key>
-            <label>checkBox2</label>
-            <description>checkBox2</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>checkBox3</key>
-            <label>checkBox3</label>
-            <description>checkBox3</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>checkBox4</key>
-            <label>checkBox4</label>
-            <description>checkBox4</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-    </group>
-
-    <group>
         <key>docker</key>
         <label>docker模板</label>
         <description></description>
@@ -203,4 +156,95 @@
             <editable>true</editable>
         </entity>
     </group>
+
+    <group>
+        <key>configCheckBox</key>
+        <label>基础框架</label>
+        <description>基础框架-1</description>
+        <column>3</column>
+        <entity>
+            <key>Spring MVC</key>
+            <label>Spring MVC</label>
+            <description>Spring MVC</description>
+            <type>CHECKBOX</type>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>Mybatis</key>
+            <label>Mybatis</label>
+            <description>Mybatis</description>
+            <type>CHECKBOX</type>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+    </group>
+
+    <group>
+        <key>configCheckBox</key>
+        <label>Spring Cloud组件</label>
+        <description>Spring Cloud组件</description>
+        <column>3</column>
+        <entity>
+            <key>Fegin</key>
+            <label>Fegin</label>
+            <description>Spring MVC</description>
+            <type>CHECKBOX</type>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>Zuul</key>
+            <label>Zuul</label>
+            <description>Zuul</description>
+            <type>CHECKBOX</type>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+        <entity>
+            <key>Consul</key>
+            <label>Consul</label>
+            <description>Consul</description>
+            <type>CHECKBOX</type>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+        <entity>
+            <key>hystrix</key>
+            <label>hystrix</label>
+            <description>hystrix</description>
+            <type>CHECKBOX</type>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+        <entity>
+            <key>Ribbon</key>
+            <label>Ribbon</label>
+            <description>Ribbon</description>
+            <type>CHECKBOX</type>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+    </group>
+
+
 </skeleton>
