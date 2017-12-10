@@ -14,7 +14,6 @@ import java.io.File;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.venus.cloud.codegen.constant.SkeletonConstant;
 import com.venus.cloud.codegen.exception.SkeletonException;
 import com.venus.cloud.codegen.property.SkeletonProperties;
 import com.venus.cloud.codegen.util.FileUtil;
@@ -22,7 +21,7 @@ import com.venus.cloud.codegen.util.SkeletonUtil;
 import com.venus.cloud.codegen.util.ZipUtil;
 
 public abstract class SkeletonDataTransport {
-    public byte[] download(String generatePath, String directoryName, String config) {
+    public byte[] download(String generatePath, String directoryName, SkeletonProperties skeletonProperties) {
         if (StringUtils.isEmpty(generatePath)) {
             throw new SkeletonException("Generate path is null or empty");
         }
@@ -31,13 +30,7 @@ public abstract class SkeletonDataTransport {
             throw new SkeletonException("Directory name is null or empty");
         }
 
-        if (StringUtils.isEmpty(config)) {
-            throw new SkeletonException("Config content is null or empty");
-        }
-
         try {
-            SkeletonProperties skeletonProperties = new SkeletonProperties(new StringBuilder(config), SkeletonConstant.ENCODING_UTF_8);
-
             String path = SkeletonUtil.getCanonicalPath(generatePath, directoryName, skeletonProperties);
 
             generate(path, skeletonProperties);
