@@ -2,7 +2,7 @@
 	<div class="gray-bg ">
 		<div class="wrapper wrapper-content animated fadeInRight">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-8 col-sm-offset-2">
 					<div class="ibox float-e-margins">
 						<div class="ibox-content">
 							<form method="POST" class="form-horizontal" action="http://localhost:2222/downloadResponse" enctype="text/plain">
