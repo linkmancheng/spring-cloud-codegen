@@ -27,7 +27,7 @@
                     <div class="col-sm-10" v-if="index == 1">
                       <el-checkbox-group v-model="modules[number].values">
                         <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-4'">
-                          <el-checkbox  :label="chkbox.label" :name="module.key+'[]'" style="color:#666"></el-checkbox>
+                          <el-checkbox  :label="chkbox.label" :name="chkbox.key" style="color:#666" value="false"></el-checkbox>
                         </div>
                       </el-checkbox-group>
                     </div>
