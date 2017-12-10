@@ -27,7 +27,7 @@
                     <label class="col-sm-2 control-label" v-if="index == 1" style="margin-top: -7px;">{{ module.label }}</label>
                     <div class="col-sm-10" v-if="index == 1">
                       <el-checkbox-group v-model="modules[number].values">
-                        <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-2'">
+                        <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-4'">
                           <el-checkbox  :label="chkbox.label" :name="chkbox.key" style="color:#666" value="false"></el-checkbox>
                           <span v-if="chkbox.defaultable" class="recommend">（推荐）</span>
                         </div>
