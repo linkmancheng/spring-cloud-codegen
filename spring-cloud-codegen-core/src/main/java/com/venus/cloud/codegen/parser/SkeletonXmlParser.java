@@ -78,7 +78,7 @@ public class SkeletonXmlParser extends Dom4JParser {
                 } else if (StringUtils.equals(childElement.getName(), SkeletonConstant.DESCRIPTION)) {
                     skeletonGroup.setDescription(text);
                 } else if (StringUtils.equals(childElement.getName(), SkeletonConstant.COLUMN)) {
-                    skeletonGroup.setColumn(Integer.parseInt(text));                    
+                    skeletonGroup.setColumn(Integer.parseInt(text));
                 } else if (StringUtils.equals(childElement.getName(), SkeletonConstant.ENTITY)) {
                     SkeletonEntity skeletonEntity = new SkeletonEntity();
 
@@ -103,8 +103,6 @@ public class SkeletonXmlParser extends Dom4JParser {
                     skeletonEntity.setValue(skeletonDataProperties.getString(text));
                 } else if (StringUtils.equals(childElement.getName(), SkeletonConstant.LABEL)) {
                     skeletonEntity.setLabel(text);
-                } else if (StringUtils.equals(childElement.getName(), SkeletonConstant.VALUE)) {
-                    skeletonEntity.setValue(text);
                 } else if (StringUtils.equals(childElement.getName(), SkeletonConstant.DESCRIPTION)) {
                     skeletonEntity.setDescription(text);
                 } else if (StringUtils.equals(childElement.getName(), SkeletonConstant.TYPE)) {
