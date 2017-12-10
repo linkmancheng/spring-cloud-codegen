@@ -14,11 +14,19 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
+import java.io.ByteArrayInputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -57,8 +65,23 @@ public class SkeletonController {
 
     @RequestMapping(value = "/download", method = RequestMethod.POST)
     @ApiOperation(value = "下载脚手架", notes = "下载脚手架Zip文件的接口，返回Zip文件的byte数组方式", response = byte[].class, httpMethod = "POST")
-    public byte[] download(@RequestBody @ApiParam(value = "配置文件内容，可拷贝src/main/resources/skeleton-data.properties的内容", required = true) String config) {
-        return dataTransport.download(skeletonGeneratePath, SPRING_CLOUD_SKELETON, config);
+    public ResponseEntity<Resource> download(@RequestBody @ApiParam(value = "配置文件内容，可拷贝src/main/resources/skeleton-data.properties的内容", required = true) String config) throws UnsupportedEncodingException {
+        byte[] bytes = dataTransport.download(skeletonGeneratePath, SPRING_CLOUD_SKELETON, config);
+
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+        headers.add("Pragma", "no-cache");
+        headers.add("Expires", "0");
+        headers.add("charset", "utf-8");
+        //设置下载文件名
+        String filename = URLEncoder.encode("generate.zip", "UTF-8");
+        headers.add("Content-Disposition", "attachment;filename=\"" + filename + "\"");
+
+        Resource resource = new InputStreamResource(new ByteArrayInputStream(bytes));
+
+        return ResponseEntity.ok().headers(headers).contentType(MediaType.parseMediaType("application/x-msdownload")).body(resource);
+
     }
 
     @RequestMapping(value = "/getMetaData", method = RequestMethod.GET)
