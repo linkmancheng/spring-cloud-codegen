@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>com.venus.cloud</groupId>
+    <groupId>cn.springcloud.codegen</groupId>
     <artifactId>spring-cloud-codegen</artifactId>
     <name>spring-cloud-codegen</name>
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
-    <url>https://github.com/Nepxion/</url>
+    <url>https://github.com/SpringCloud/spring-cloud-codegen</url>
 
     <modules>
         <module>spring-cloud-codegen-service</module>
