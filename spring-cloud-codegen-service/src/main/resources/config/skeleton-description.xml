@@ -184,7 +184,7 @@
         <type>CHECKBOX_GROUP</type>
         <layout>HORIZONTAL</layout>
         <entity>
-            <key>Spring MVC</key>
+            <key>spring-mvc</key>
             <label>Spring MVC</label>
             <description>Spring MVC</description>
             <type>CHECKBOX</type>
