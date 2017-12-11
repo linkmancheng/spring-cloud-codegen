@@ -116,8 +116,8 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>Venus Cloud</key>
-            <label>Venus Cloud</label>
+            <key>Spring Cloud</key>
+            <label>Spring Cloud</label>
             <description></description>
             <type>RADIO</type>
             <value>false</value>
