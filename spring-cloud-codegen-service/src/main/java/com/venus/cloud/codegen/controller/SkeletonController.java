@@ -31,13 +31,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.venus.cloud.codegen.entity.SkeletonGroup;
-import com.venus.cloud.codegen.generator.server.PomXmlGenerator;
-import com.venus.cloud.codegen.generator.server.java.ServerApplicationClassGenerator;
-import com.venus.cloud.codegen.generator.server.resources.ApplicationPropertiesGenerator;
-import com.venus.cloud.codegen.property.SkeletonProperties;
-import com.venus.cloud.codegen.transport.SkeletonConfigTransport;
-import com.venus.cloud.codegen.transport.SkeletonDataTransport;
+import com.nepxion.skeleton.entity.SkeletonGroup;
+import com.nepxion.skeleton.property.SkeletonProperties;
+import com.nepxion.skeleton.transport.SkeletonConfigTransport;
+import com.nepxion.skeleton.transport.SkeletonDataTransport;
+import com.venus.cloud.codegen.generator.GeneratorService;
 
 @RestController
 @Api(tags = { "脚手架接口" })
@@ -47,19 +45,20 @@ public class SkeletonController {
     @Value("${skeleton.generate.path}")
     private String skeletonGeneratePath;
 
+    private GeneratorService generatorService;
     private SkeletonConfigTransport configTransport;
     private SkeletonDataTransport dataTransport;
 
     @PostConstruct
     private void initialize() {
+        generatorService = new GeneratorService();
+        
         configTransport = new SkeletonConfigTransport();
 
         dataTransport = new SkeletonDataTransport() {
             @Override
             public void generate(String path, SkeletonProperties skeletonProperties) throws Exception {
-                new ServerApplicationClassGenerator(path, "server", skeletonProperties).generate();
-                new ApplicationPropertiesGenerator(path, "server", skeletonProperties).generate();
-                new PomXmlGenerator(path, "server", skeletonProperties).generate();
+                generatorService.generator(path, skeletonProperties);
             }
         };
     }
