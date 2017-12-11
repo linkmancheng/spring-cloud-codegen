@@ -169,9 +169,62 @@
             <editable>true</editable>
         </entity>
     </group>
+
+    <group>
+        <key>appType</key>
+        <label>Spring Cloud独立组件</label>
+        <description></description>
+        <type>RADIO_GROUP</type>
+        <layout>HORIZONTAL</layout>
+        <entity>
+            <key>Eureka Server</key>
+            <label>Eureka Server</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>Zuul Server</key>
+            <label>Zuul Server</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>Spring Cloud Gateway</key>
+            <label>SC Gateway</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>Config Server</key>
+            <label>Config Server</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+    </group>
+
     <group>
         <key>configCheckBox</key>
-        <label>Spring Cloud组件</label>
+        <label>Spring Cloud组合组件</label>
         <description>Spring Cloud组件</description>
         <type>CHECKBOX_GROUP</type>
         <layout>HORIZONTAL</layout>
@@ -185,26 +238,7 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-        <entity>
-            <key>Zuul</key>
-            <label>Zuul</label>
-            <description>Zuul</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>true</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>Consul</key>
-            <label>Consul</label>
-            <description>Consul</description>
-            <type>CHECKBOX</type>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
+
         <entity>
             <key>hystrix</key>
             <label>hystrix</label>
