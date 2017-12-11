@@ -110,17 +110,6 @@
         <type>RADIO_GROUP</type>
         <layout>HORIZONTAL</layout>
         <entity>
-            <key>组合组件</key>
-            <label>组合组件</label>
-            <description></description>
-            <type>RADIO</type>
-            <value>false</value>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
             <key>独立组件</key>
             <label>独立组件</label>
             <description></description>
@@ -214,7 +203,7 @@
 
     <group>
         <key>appType</key>
-        <label>Spring Cloud独立组件</label>
+        <label>独立组件</label>
         <description></description>
         <type>RADIO_GROUP</type>
         <layout>HORIZONTAL</layout>
@@ -266,7 +255,7 @@
 
     <group>
         <key>configCheckBox</key>
-        <label>Spring Cloud组合组件</label>
+        <label>可组合组件</label>
         <description>Spring Cloud组件</description>
         <type>CHECKBOX_GROUP</type>
         <layout>HORIZONTAL</layout>
