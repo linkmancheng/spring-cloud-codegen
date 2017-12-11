@@ -17,6 +17,7 @@ import cn.springcloud.codegen.service.generator.server.java.ServerApplicationCla
 import cn.springcloud.codegen.service.generator.server.resources.ApplicationPropertiesGenerator;
 
 import com.nepxion.skeleton.property.SkeletonProperties;
+import com.nepxion.skeleton.service.SkeletonService;
 
 @Component("skeletonServiceImpl")
 public class SkeletonServiceImpl implements SkeletonService {

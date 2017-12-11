@@ -10,7 +10,8 @@ package cn.springcloud.codegen.service.test;
  * @version 1.0
  */
 
-import com.nepxion.skeleton.generator.SkeletonServiceImpl;
+import cn.springcloud.codegen.service.generator.SkeletonServiceImpl;
+
 import com.nepxion.skeleton.property.SkeletonProperties;
 import com.nepxion.skeleton.service.SkeletonService;
 
