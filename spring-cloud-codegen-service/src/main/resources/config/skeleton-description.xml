@@ -61,40 +61,13 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
-        <!--
-        <entity>
-            <key>springBootVersion</key>
-            <label>Spring Boot</label>
-            <description></description>
-            <type>COMBOBOX</type>
-            <options>1.5.6.RELEASE</options>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-
-        <entity>
-            <key>spring-cloud-Version</key>
-            <label>Spring Cloud</label>
-            <description>Spring Cloud</description>
-            <type>COMBOBOX</type>
-            <options>Dalston.SR4;Edgware.RELEASE</options>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        -->
-
     </group>
-
     <group>
         <key>appType</key>
         <label>应用类型</label>
         <description></description>
-        <column>3</column>
+        <type>RADIO_GROUP</type>
+        <layout>HORIZONTAL</layout>
         <entity>
             <key>Spring Boot</key>
             <label>Spring Boot</label>
@@ -140,12 +113,12 @@
             <editable>true</editable>
         </entity>
     </group>
-
     <group>
         <key>docker</key>
         <label>docker模板</label>
         <description></description>
-        <column>3</column>
+        <type>RADIO_GROUP</type>
+        <layout>HORIZONTAL</layout>
         <entity>
             <key>true</key>
             <label>是</label>
@@ -169,12 +142,12 @@
             <editable>true</editable>
         </entity>
     </group>
-
     <group>
         <key>configCheckBox</key>
         <label>基础框架</label>
         <description>基础框架-1</description>
-        <column>3</column>
+        <type>CHECKBOX_GROUP</type>
+        <layout>HORIZONTAL</layout>
         <entity>
             <key>Spring MVC</key>
             <label>Spring MVC</label>
@@ -195,14 +168,13 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
     </group>
-
     <group>
         <key>configCheckBox</key>
         <label>Spring Cloud组件</label>
         <description>Spring Cloud组件</description>
-        <column>3</column>
+        <type>CHECKBOX_GROUP</type>
+        <layout>HORIZONTAL</layout>
         <entity>
             <key>Fegin</key>
             <label>Fegin</label>
@@ -223,7 +195,6 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
         <entity>
             <key>Consul</key>
             <label>Consul</label>
@@ -234,7 +205,6 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
         <entity>
             <key>hystrix</key>
             <label>hystrix</label>
@@ -245,7 +215,6 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
         <entity>
             <key>Ribbon</key>
             <label>Ribbon</label>
@@ -256,8 +225,5 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
     </group>
-
-
 </skeleton>
