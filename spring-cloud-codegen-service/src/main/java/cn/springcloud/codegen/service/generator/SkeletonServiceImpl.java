@@ -1,8 +1,8 @@
 package cn.springcloud.codegen.service.generator;
 
 /**
- * <p>Title: Nepxion Skeleton Generator</p>
- * <p>Description: Nepxion Skeleton Generator For Freemarker</p>
+ * <p>Title: Nepxion Skeleton</p>
+ * <p>Description: Nepxion Skeleton For Freemarker</p>
  * <p>Copyright: Copyright (c) 2017</p>
  * <p>Company: Nepxion</p>
  * @author Haojun Ren
@@ -10,18 +10,18 @@ package cn.springcloud.codegen.service.generator;
  * @version 1.0
  */
 
-import java.io.IOException;
+import org.springframework.stereotype.Component;
 
-import com.nepxion.skeleton.exception.SkeletonException;
-import com.nepxion.skeleton.property.SkeletonProperties;
 import cn.springcloud.codegen.service.generator.server.PomXmlGenerator;
 import cn.springcloud.codegen.service.generator.server.java.ServerApplicationClassGenerator;
 import cn.springcloud.codegen.service.generator.server.resources.ApplicationPropertiesGenerator;
 
-import freemarker.template.TemplateException;
+import com.nepxion.skeleton.property.SkeletonProperties;
 
-public class GeneratorService {
-    public void generator(String path, SkeletonProperties skeletonProperties) throws SkeletonException, TemplateException, IOException {
+@Component("skeletonServiceImpl")
+public class SkeletonServiceImpl implements SkeletonService {
+    @Override
+    public void generator(String path, SkeletonProperties skeletonProperties) throws Exception {
         // 创建Java类文件
         // 模板文件ServerApplication.java.template必须和ServerApplicationClassGenerator.java放在同一个目录下，下同
         new ServerApplicationClassGenerator(path, "server", skeletonProperties).generate();

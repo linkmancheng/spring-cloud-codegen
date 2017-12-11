@@ -1,8 +1,8 @@
-package cn.springcloud.codegen.service.generator;
+package cn.springcloud.codegen.service.test;
 
 /**
- * <p>Title: Nepxion Skeleton Generator</p>
- * <p>Description: Nepxion Skeleton Generator For Freemarker</p>
+ * <p>Title: Nepxion Skeleton</p>
+ * <p>Description: Nepxion Skeleton For Freemarker</p>
  * <p>Copyright: Copyright (c) 2017</p>
  * <p>Company: Nepxion</p>
  * @author Haojun Ren
@@ -10,9 +10,11 @@ package cn.springcloud.codegen.service.generator;
  * @version 1.0
  */
 
+import com.nepxion.skeleton.generator.SkeletonServiceImpl;
 import com.nepxion.skeleton.property.SkeletonProperties;
+import com.nepxion.skeleton.service.SkeletonService;
 
-public class GeneratorTest {
+public class SkeletonTest {
     public static void main(String[] args) {
         try {
             // 创建文件的输出的路径
@@ -25,8 +27,8 @@ public class GeneratorTest {
             SkeletonProperties skeletonProperties = new SkeletonProperties(propertiesPath);
 
             // 输出脚手架文件
-            GeneratorService generatorService = new GeneratorService();
-            generatorService.generator(generatePath, skeletonProperties);
+            SkeletonService skeletonService = new SkeletonServiceImpl();
+            skeletonService.generator(generatePath, skeletonProperties);
         } catch (Exception e) {
             e.printStackTrace();
         }
