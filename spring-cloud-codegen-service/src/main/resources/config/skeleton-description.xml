@@ -61,6 +61,37 @@
         </entity>
     </group>
 
+    <!-- 是否docker化-->
+    <group>
+        <key>docker-template</key>
+        <label>docker模板</label>
+        <description></description>
+        <type>RADIO_GROUP</type>
+        <layout>HORIZONTAL</layout>
+        <entity>
+            <key>true</key>
+            <label>是</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>false</key>
+            <label>否</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+    </group>
+
     <!-- 应用类型-->
     <group>
         <key>appType</key>
@@ -145,36 +176,7 @@
         </entity>
     </group>
 
-    <!-- 是否docker化-->
-    <group>
-        <key>docker-template</key>
-        <label>docker模板</label>
-        <description></description>
-        <type>RADIO_GROUP</type>
-        <layout>HORIZONTAL</layout>
-        <entity>
-            <key>true</key>
-            <label>是</label>
-            <description></description>
-            <type>RADIO</type>
-            <value>false</value>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
-            <key>false</key>
-            <label>否</label>
-            <description></description>
-            <type>RADIO</type>
-            <value>false</value>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-    </group>
+
 
     <!-- web基础框架-->
     <group>
