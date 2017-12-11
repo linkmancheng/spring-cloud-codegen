@@ -10,7 +10,7 @@ package com.venus.cloud.codegen.generator;
  * @version 1.0
  */
 
-import com.venus.cloud.codegen.property.SkeletonProperties;
+import com.nepxion.skeleton.property.SkeletonProperties;
 
 public class GeneratorTest {
     public static void main(String[] args) {

@@ -12,11 +12,11 @@ package com.venus.cloud.codegen.generator;
 
 import java.io.IOException;
 
-import com.venus.cloud.codegen.exception.SkeletonException;
+import com.nepxion.skeleton.exception.SkeletonException;
+import com.nepxion.skeleton.property.SkeletonProperties;
 import com.venus.cloud.codegen.generator.server.PomXmlGenerator;
 import com.venus.cloud.codegen.generator.server.java.ServerApplicationClassGenerator;
 import com.venus.cloud.codegen.generator.server.resources.ApplicationPropertiesGenerator;
-import com.venus.cloud.codegen.property.SkeletonProperties;
 
 import freemarker.template.TemplateException;
 

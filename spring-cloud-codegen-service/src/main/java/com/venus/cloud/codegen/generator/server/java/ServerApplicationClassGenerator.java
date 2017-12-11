@@ -13,9 +13,9 @@ package com.venus.cloud.codegen.generator.server.java;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.venus.cloud.codegen.constant.SkeletonConstant;
-import com.venus.cloud.codegen.generator.SkeletonJavaGenerator;
-import com.venus.cloud.codegen.property.SkeletonProperties;
+import com.nepxion.skeleton.constant.SkeletonConstant;
+import com.nepxion.skeleton.generator.SkeletonJavaGenerator;
+import com.nepxion.skeleton.property.SkeletonProperties;
 
 public class ServerApplicationClassGenerator extends SkeletonJavaGenerator {
     /**

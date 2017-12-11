@@ -31,11 +31,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.venus.cloud.codegen.entity.SkeletonGroup;
+import com.nepxion.skeleton.entity.SkeletonGroup;
+import com.nepxion.skeleton.property.SkeletonProperties;
+import com.nepxion.skeleton.transport.SkeletonConfigTransport;
+import com.nepxion.skeleton.transport.SkeletonDataTransport;
 import com.venus.cloud.codegen.generator.GeneratorService;
-import com.venus.cloud.codegen.property.SkeletonProperties;
-import com.venus.cloud.codegen.transport.SkeletonConfigTransport;
-import com.venus.cloud.codegen.transport.SkeletonDataTransport;
 
 @RestController
 @Api(tags = { "脚手架接口" })

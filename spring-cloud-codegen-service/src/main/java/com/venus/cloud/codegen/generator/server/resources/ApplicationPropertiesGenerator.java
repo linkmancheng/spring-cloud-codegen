@@ -13,10 +13,10 @@ package com.venus.cloud.codegen.generator.server.resources;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.venus.cloud.codegen.constant.SkeletonConstant;
-import com.venus.cloud.codegen.entity.SkeletonFileType;
-import com.venus.cloud.codegen.generator.SkeletonFileGenerator;
-import com.venus.cloud.codegen.property.SkeletonProperties;
+import com.nepxion.skeleton.constant.SkeletonConstant;
+import com.nepxion.skeleton.entity.SkeletonFileType;
+import com.nepxion.skeleton.generator.SkeletonFileGenerator;
+import com.nepxion.skeleton.property.SkeletonProperties;
 
 public class ApplicationPropertiesGenerator extends SkeletonFileGenerator {
     /**
