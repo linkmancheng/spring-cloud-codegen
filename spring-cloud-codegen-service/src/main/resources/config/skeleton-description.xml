@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <skeleton>
+    <!-- 工程基本配置-->
     <group>
-        <key>project</key>
+        <key>basic</key>
         <label></label>
         <description></description>
         <entity>
@@ -24,9 +25,6 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-        <key>project</key>
-        <label>工程配置</label>
-        <description></description>
         <entity>
             <key>moduleName</key>
             <label>工程模块名</label>
@@ -62,6 +60,8 @@
             <editable>true</editable>
         </entity>
     </group>
+
+    <!-- 应用类型-->
     <group>
         <key>appType</key>
         <label>应用类型</label>
@@ -103,8 +103,9 @@
         </entity>
     </group>
 
+    <!-- Spring Cloud独立部署组件-->
     <group>
-        <key>appType</key>
+        <key>sc-alone</key>
         <label>Spring Cloud</label>
         <description></description>
         <type>RADIO_GROUP</type>
@@ -121,7 +122,7 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>服务提供者</key>
+            <key>service-provider</key>
             <label>服务提供者</label>
             <description></description>
             <type>RADIO</type>
@@ -132,7 +133,7 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>服务消费者</key>
+            <key>service-consumer</key>
             <label>服务消费者</label>
             <description></description>
             <type>RADIO</type>
@@ -144,8 +145,9 @@
         </entity>
     </group>
 
+    <!-- 是否docker化-->
     <group>
-        <key>docker</key>
+        <key>docker-template</key>
         <label>docker模板</label>
         <description></description>
         <type>RADIO_GROUP</type>
@@ -173,8 +175,10 @@
             <editable>true</editable>
         </entity>
     </group>
+
+    <!-- web基础框架-->
     <group>
-        <key>configCheckBox</key>
+        <key>basic-framework</key>
         <label>基础框架</label>
         <description>基础框架-1</description>
         <type>CHECKBOX_GROUP</type>
@@ -201,14 +205,15 @@
         </entity>
     </group>
 
+    <!-- Spring Cloud独立部署单选组件-->
     <group>
-        <key>appType</key>
+        <key>sc-alone-radio</key>
         <label>独立组件</label>
         <description></description>
         <type>RADIO_GROUP</type>
         <layout>HORIZONTAL</layout>
         <entity>
-            <key>Eureka Server</key>
+            <key>eureka-server</key>
             <label>Eureka Server</label>
             <description></description>
             <type>RADIO</type>
@@ -219,7 +224,7 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>Zuul Server</key>
+            <key>zuul-server</key>
             <label>Zuul Server</label>
             <description></description>
             <type>RADIO</type>
@@ -230,7 +235,7 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>Spring Cloud Gateway</key>
+            <key>sc-gateway</key>
             <label>SC Gateway</label>
             <description></description>
             <type>RADIO</type>
@@ -241,8 +246,20 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>Config Server</key>
+            <key>config-server</key>
             <label>Config Server</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+
+        <entity>
+            <key>zipkin-server</key>
+            <label>Zipkin Server</label>
             <description></description>
             <type>RADIO</type>
             <value>false</value>
@@ -253,14 +270,15 @@
         </entity>
     </group>
 
+    <!-- Spring Cloud可组合多选组件-->
     <group>
-        <key>configCheckBox</key>
+        <key>sc-group-checkBox</key>
         <label>可组合组件</label>
         <description>Spring Cloud组件</description>
         <type>CHECKBOX_GROUP</type>
         <layout>HORIZONTAL</layout>
         <entity>
-            <key>Fegin</key>
+            <key>fegin</key>
             <label>Fegin</label>
             <description>Spring MVC</description>
             <type>CHECKBOX</type>
@@ -281,7 +299,7 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>Ribbon</key>
+            <key>ribbon</key>
             <label>Ribbon</label>
             <description>Ribbon</description>
             <type>CHECKBOX</type>
