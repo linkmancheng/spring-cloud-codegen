@@ -45,15 +45,15 @@
         "entityList": [
           {
             "key": "moduleName", // 组件所对应的唯一Key
-            "label": "工程的模块名(moduleName)", // 组件的标签
-            "description": "【必改项】首字母必须小写，中间只允许出现“-”", // 组件的描述
+            "label": "工程的模块名", // 组件的标签
+            "description": "moduleName", // 组件的描述
+            "note": "【必改项】首字母必须小写，中间只允许出现“-”", // 组件的使用提示
             "value": "sales", // 组件内容
             "type": "TEXTFIELD", // 组件类型，包括TEXTFIELD，CHECKBOX，RADIO，COMBOBOX
             "options": null, // 对应项如果是下来菜单(COMBOBOX)方式的时候，里面的值列表，可以为null
             "highlightable": true, // 渲染成高亮方式
             "defaultable": false, // 渲染成默认项方式
             "emptiable": false, // 渲染成留空项方式
-            "editable": true e, 
             "editable": true // 渲染成不可编辑项方式
           }
         ]
