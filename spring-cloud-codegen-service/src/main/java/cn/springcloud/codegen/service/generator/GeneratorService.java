@@ -10,19 +10,19 @@ package cn.springcloud.codegen.service.generator;
  * @version 1.0
  */
 
-import org.springframework.stereotype.Component;
+import java.io.IOException;
 
 import cn.springcloud.codegen.service.generator.server.PomXmlGenerator;
 import cn.springcloud.codegen.service.generator.server.java.ServerApplicationClassGenerator;
 import cn.springcloud.codegen.service.generator.server.resources.ApplicationPropertiesGenerator;
 
+import com.nepxion.skeleton.exception.SkeletonException;
 import com.nepxion.skeleton.property.SkeletonProperties;
-import com.nepxion.skeleton.service.SkeletonService;
 
-@Component("skeletonServiceImpl")
-public class SkeletonServiceImpl implements SkeletonService {
-    @Override
-    public void generator(String path, SkeletonProperties skeletonProperties) throws Exception {
+import freemarker.template.TemplateException;
+
+public class GeneratorService {
+    public void generator(String path, SkeletonProperties skeletonProperties) throws SkeletonException, TemplateException, IOException {
         // 创建Java类文件
         // 模板文件ServerApplication.java.template必须和ServerApplicationClassGenerator.java放在同一个目录下，下同
         new ServerApplicationClassGenerator(path, "server", skeletonProperties).generate();

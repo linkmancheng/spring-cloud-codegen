@@ -109,14 +109,6 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/skeleton-engine-${skeleton.version}.jar</systemPath>
         </dependency>
-
-        <dependency>
-            <groupId>com.nepxion</groupId>
-            <artifactId>keleton-rest</artifactId>
-            <version>${skeleton.version}</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/skeleton-rest-${skeleton.version}.jar</systemPath>
-        </dependency>
     </dependencies>
 
     <build>
