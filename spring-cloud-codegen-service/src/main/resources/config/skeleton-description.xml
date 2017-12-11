@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <skeleton>
-    <!-- 工程基本配置-->
+    <!-- 工程基本配置 -->
     <group>
         <key>basic</key>
         <label></label>
@@ -61,10 +61,10 @@
         </entity>
     </group>
 
-    <!-- 是否docker化-->
+    <!-- 是否Docker化 -->
     <group>
         <key>docker-template</key>
-        <label>docker模板</label>
+        <label>Docker模板</label>
         <description></description>
         <type>RADIO_GROUP</type>
         <layout>HORIZONTAL</layout>
@@ -92,7 +92,7 @@
         </entity>
     </group>
 
-    <!-- 应用类型-->
+    <!-- 应用类型 -->
     <group>
         <key>appType</key>
         <label>应用类型</label>
@@ -134,7 +134,7 @@
         </entity>
     </group>
 
-    <!-- Spring Cloud独立部署组件-->
+    <!-- Spring Cloud独立部署组件 -->
     <group>
         <key>sc-alone</key>
         <label>Spring Cloud</label>
@@ -176,9 +176,7 @@
         </entity>
     </group>
 
-
-
-    <!-- web基础框架-->
+    <!-- web基础框架 -->
     <group>
         <key>basic-framework</key>
         <label>基础框架</label>
@@ -207,7 +205,7 @@
         </entity>
     </group>
 
-    <!-- Spring Cloud独立部署单选组件-->
+    <!-- Spring Cloud独立部署单选组件 -->
     <group>
         <key>sc-alone-radio</key>
         <label>独立组件</label>
@@ -258,7 +256,6 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
         <entity>
             <key>zipkin-server</key>
             <label>Zipkin Server</label>
@@ -272,7 +269,7 @@
         </entity>
     </group>
 
-    <!-- Spring Cloud可组合多选组件-->
+    <!-- Spring Cloud可组合多选组件 -->
     <group>
         <key>sc-group-checkBox</key>
         <label>可组合组件</label>
@@ -289,7 +286,6 @@
             <emptiable>false</emptiable>
             <editable>true</editable>
         </entity>
-
         <entity>
             <key>hystrix</key>
             <label>hystrix</label>
