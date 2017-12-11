@@ -29,12 +29,10 @@
                   <div class="form-group" v-else-if="module.entityList[0].type == 'CHECKBOX' && index == 1">
                     <label class="col-sm-2 control-label" v-if="index == 1" style="margin-top: -7px;">{{ module.label }}</label>
                     <div class="col-sm-10" v-if="index == 1">
-                      <el-checkbox-group v-model="modules[number].values">
                         <div v-for="(chkbox,cnum) in module.entityList" :class="'col-sm-2'">
-                          <el-checkbox  :label="chkbox.label" :name="chkbox.key" style="color:#666" value="false"></el-checkbox>
+                          <el-checkbox  :label="modules[number].entityList[cnum].value" :name="chkbox.key" style="color:#666">{{ chkbox.label }}</el-checkbox>
                           <span v-if="chkbox.defaultable" class="recommend">（推荐）</span>
                         </div>
-                      </el-checkbox-group>
                     </div>
                   </div>
                   <hr>
@@ -42,7 +40,7 @@
                 <div class="hr-line-dashed"></div>
                 <div class="form-group" style="text-align:center;">
                   <div class="col-sm-12">
-                    <a class="btn btn-default" type="button" href="#">重置</a>
+                    <a class="btn btn-default" href="/#">重置</a>
                     <button class="btn btn-primary" type="submit">生成工程</button>
                   </div>
                 </div>
@@ -110,10 +108,19 @@
           tmp.label = data[i].label;
           tmp.description = data[i].description;
           tmp.column = data[i].column;
-          tmp.entityList = data[i].entityList;
+          tmp.entityList = this.chkEntityList(data[i].entityList);
           tmp.values = [];
           this.modules.push(tmp);
         }
+      },
+      chkEntityList: function (list) {
+        if (list[0].type == 'CHECKBOX') {
+          for (var i in list) {
+            list[i].value = true;
+          }
+          console.log(list);
+        }
+        return list;
       }
 
     },
