@@ -91,17 +91,6 @@
             <editable>true</editable>
         </entity>
         <entity>
-            <key>Spring Cloud</key>
-            <label>Spring Cloud</label>
-            <description></description>
-            <type>RADIO</type>
-            <value>false</value>
-            <highlightable>false</highlightable>
-            <defaultable>false</defaultable>
-            <emptiable>false</emptiable>
-            <editable>true</editable>
-        </entity>
-        <entity>
             <key>war</key>
             <label>war应用</label>
             <description></description>
@@ -113,6 +102,59 @@
             <editable>true</editable>
         </entity>
     </group>
+
+    <group>
+        <key>appType</key>
+        <label>Spring Cloud</label>
+        <description></description>
+        <type>RADIO_GROUP</type>
+        <layout>HORIZONTAL</layout>
+        <entity>
+            <key>组合组件</key>
+            <label>组合组件</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>独立组件</key>
+            <label>独立组件</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>服务提供者</key>
+            <label>服务提供者</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+        <entity>
+            <key>服务消费者</key>
+            <label>服务消费者</label>
+            <description></description>
+            <type>RADIO</type>
+            <value>false</value>
+            <highlightable>false</highlightable>
+            <defaultable>false</defaultable>
+            <emptiable>false</emptiable>
+            <editable>true</editable>
+        </entity>
+    </group>
+
     <group>
         <key>docker</key>
         <label>docker模板</label>
