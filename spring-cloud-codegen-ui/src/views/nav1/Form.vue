@@ -12,6 +12,12 @@
                     <div class="col-sm-8" v-if="item.type != 'RADIO' && item.type != 'CHECKBOX'">
                       <input v-if="item.type == 'TEXTFIELD'" class="form-control" :name="item.key" :value="item.value" required>
                       <span v-if="item.highlightable && item.type == 'TEXTFIELD'" class="must-need">*</span>
+                      <span v-if="item.note != null && item.type == 'TEXTFIELD'" class="info-tip">
+                        <el-tooltip class="item" effect="dark" placement="right">
+                          <div slot="content" class="content-box">{{ item.note }}</div>
+                          <el-button class="el-icon-question"></el-button>
+                        </el-tooltip>
+                      </span>
                       <el-select v-if="item.type == 'COMBOBOX'" v-model="modules[number].entityList[index].value" :name="item.key" :select2Style="select2Style" :placeholder="item.label">
                         <el-option v-if="item.type == 'COMBOBOX'" v-for="option in item.options" :label="option" :value="option"></el-option>
                       </el-select>
@@ -24,7 +30,6 @@
                         <el-radio  :label="radio.key" v-model="item.value" :name="module.key" >{{ radio.label }}</el-radio>
                       </div>
                     </div>
-
                   </div>
                   <div class="form-group" v-else-if="module.entityList[0].type == 'CHECKBOX' && index == 1">
                     <label class="col-sm-2 control-label" v-if="index == 1" style="margin-top: -7px;">{{ module.label }}</label>
@@ -118,7 +123,13 @@
           for (var i in list) {
             list[i].value = true;
           }
-          console.log(list);
+        }
+        if (list[0].type == 'TEXTFIELD') {
+          for (var j in list) {
+            if (list[j].note != null) {
+              console.log(list[j].note);
+            }
+          }
         }
         return list;
       }
@@ -130,6 +141,25 @@
   }
 </script>
 <style scoped>
+
+  .info-tip button {
+    font-size: 25px;
+    color: #20a0ff;
+    position: absolute;
+    top: -6px;
+    right: -32px;
+    border:none;
+    width:32px;
+    height:37px;
+  }
+
+  .content-box {
+    max-width:300px !important;
+  }
+
+  .info-tip button:focus, .info-tip button:hover {
+    background-color: white ! important;
+  }
   .recommend {
     color:#20a0ff;
     padding-left: 15px;
