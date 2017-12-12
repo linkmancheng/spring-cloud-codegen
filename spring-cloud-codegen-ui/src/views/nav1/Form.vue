@@ -124,13 +124,6 @@
             list[i].value = true;
           }
         }
-        if (list[0].type == 'TEXTFIELD') {
-          for (var j in list) {
-            if (list[j].note != null) {
-              console.log(list[j].note);
-            }
-          }
-        }
         return list;
       }
 
