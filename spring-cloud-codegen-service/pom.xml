@@ -103,7 +103,7 @@
         </dependency>
 
         <dependency>
-            <groupId>nepxion</groupId>
+            <groupId>com.nepxion</groupId>
             <artifactId>skeleton-engine</artifactId>
             <version>${skeleton.version}</version>
             <scope>system</scope>
