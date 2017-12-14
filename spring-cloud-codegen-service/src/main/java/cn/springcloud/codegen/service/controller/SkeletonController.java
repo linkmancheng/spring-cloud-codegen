@@ -41,6 +41,9 @@ import com.nepxion.skeleton.transport.SkeletonDataTransport;
 @RestController
 @Api(tags = { "脚手架接口" })
 public class SkeletonController {
+    @Value("${skeleton.template.prefix.template.directory}")
+    private String skeletonPrefixTemplateDirectory;
+
     @Value("${skeleton.generate.file.name}")
     private String skeletonGenerateFileName;
 
@@ -48,6 +51,7 @@ public class SkeletonController {
     private String skeletonGeneratePath;
 
     private GeneratorService generatorService;
+
     private SkeletonConfigTransport configTransport;
     private SkeletonDataTransport dataTransport;
 
@@ -58,7 +62,7 @@ public class SkeletonController {
         dataTransport = new SkeletonDataTransport() {
             @Override
             public void generate(String path, SkeletonProperties skeletonProperties) throws Exception {
-                generatorService.generator(path, skeletonProperties);
+                generatorService.generator(path, skeletonPrefixTemplateDirectory, skeletonProperties);
             }
         };
     }
