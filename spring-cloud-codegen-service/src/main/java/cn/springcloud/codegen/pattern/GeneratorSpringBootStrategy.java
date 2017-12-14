@@ -3,6 +3,7 @@ package cn.springcloud.codegen.pattern;
 import java.io.File;
 
 import cn.springcloud.codegen.enums.AppTypeEnum;
+import org.springframework.stereotype.Component;
 
 /**
  * @author xujin
