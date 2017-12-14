@@ -113,6 +113,7 @@
         <entity>
             <key>Spring Cloud</key>
             <label>Spring Cloud</label>
+            <note>Spring Cloud应用</note>
             <description></description>
             <type>RADIO</type>
             <value>false</value>
