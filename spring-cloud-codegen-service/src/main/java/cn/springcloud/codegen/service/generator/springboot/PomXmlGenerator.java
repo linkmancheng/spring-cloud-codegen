@@ -53,7 +53,7 @@ public class PomXmlGenerator extends SkeletonFileGenerator {
      */
     @Override
     protected String getTemplateName() {
-        return "pom.xml.template";
+        return "pom.xml.ftl";
     }
 
     /**
